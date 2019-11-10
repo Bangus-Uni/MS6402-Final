@@ -22,7 +22,7 @@ public class ForceCamera : MonoBehaviour
     {
         // Set the position of the camera's transform to be the same as the player's, but offset by the calculated offset distance.
         // transform.position = player.transform.position + offset;
-        transform.position = new Vector3(player.transform.position.x + offset.x, 20, player.transform.position.z + offset.z);
+        transform.position = new Vector3(player.transform.position.x + offset.x, 10.5f, player.transform.position.z + offset.z);
 
     }
 }
