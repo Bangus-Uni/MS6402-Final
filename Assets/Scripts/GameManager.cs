@@ -27,8 +27,6 @@ public class GameManager : MonoBehaviour
 
         int intDice = Mathf.RoundToInt(Random.Range(0.5f, (a_goRooms.Length + 0.5f)));
 
-        Debug.Log("DiceRoll: " + intDice);
-
         goNewRoom = a_goRooms[intDice - 1];
 
 
