@@ -298,6 +298,7 @@ MonoBehaviour:
   flBulletSpeed: 10
   flTimeBetweenShots: 0.08
   trFirePoint: {fileID: 851762935}
+  intGunType: 1
 --- !u!1 &674750715
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,6 +349,7 @@ MonoBehaviour:
   flBulletSpeed: 10
   flTimeBetweenShots: 0.08
   trFirePoint: {fileID: 1437634563}
+  intGunType: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
