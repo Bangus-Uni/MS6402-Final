@@ -31,7 +31,7 @@ public class Gun : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q)) {
             intGunType++;
-            if (intGunType > 3) intGunType = 1;
+            if (intGunType > 4) intGunType = 1;
             Debug.Log("Current Gun: " + intGunType);
         }
 
@@ -43,11 +43,15 @@ public class Gun : MonoBehaviour
         }
         if (intGunType == 2)
         {
-            SpreadShot();
+            WideShot();
         }
         if (intGunType == 3)
         {
             WaveShot();
+        }
+        if (intGunType == 4)
+        {
+            ThreeProngShot();
         }
     }
 
@@ -70,7 +74,7 @@ public class Gun : MonoBehaviour
         }
     }
 
-    void SpreadShot()
+    void WideShot()
     {
         Vector3 v3FirePointLoc1 = new Vector3(trFirePoint.position.x - 0.5f, trFirePoint.position.y, trFirePoint.position.z);
         Vector3 v3FirePointLoc2 = new Vector3(trFirePoint.position.x, trFirePoint.position.y, trFirePoint.position.z);
@@ -136,6 +140,38 @@ public class Gun : MonoBehaviour
                 v3FirePointWaveLoc = new Vector3(a_flWaveLocs[intWaveShotTicker], trFirePoint.position.y, trFirePoint.position.z);
                 Bullet newBullet = Instantiate(bullet, v3FirePointWaveLoc, trFirePoint.rotation) as Bullet;
                 newBullet.flSpeed = flBulletSpeed;
+            }
+        }
+
+        else
+        {
+            flShotCounter = 0;
+        }
+    }
+
+    void ThreeProngShot()
+    {
+        Quaternion quatFirePointRot1 = Quaternion.Euler(trFirePoint.rotation.x, trFirePoint.rotation.y - 30, trFirePoint.rotation.z);
+        Quaternion quatFirePointRot2 = Quaternion.Euler(trFirePoint.rotation.x, trFirePoint.rotation.y, trFirePoint.rotation.z);
+        Quaternion quatFirePointRot3 = Quaternion.Euler(trFirePoint.rotation.x, trFirePoint.rotation.y + 30, trFirePoint.rotation.z);
+
+        Debug.Log(quatFirePointRot1);
+
+
+
+
+        if (boolIsFiring)
+        {
+            flShotCounter -= Time.deltaTime;
+            if (flShotCounter <= 0)
+            {
+                flShotCounter = flTimeBetweenShots;
+                Bullet newBullet1 = Instantiate(bullet, trFirePoint.position, quatFirePointRot1) as Bullet;
+                Bullet newBullet2 = Instantiate(bullet, trFirePoint.position, quatFirePointRot2) as Bullet;
+                Bullet newBullet3 = Instantiate(bullet, trFirePoint.position, quatFirePointRot3) as Bullet;
+                newBullet1.flSpeed = flBulletSpeed;
+                newBullet2.flSpeed = flBulletSpeed;
+                newBullet3.flSpeed = flBulletSpeed;
             }
         }
 
