@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -170,7 +170,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &105021697
 BoxCollider:
@@ -202,7 +202,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6d6bdf4a0eb668a4ab299b1c8915795d, type: 2}
+  - {fileID: 2100000, guid: e57ca4cbec3126a468352fa1ecbad40e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -518,6 +518,7 @@ MonoBehaviour:
   - {fileID: 6804534385603783512, guid: 9a0bbb34886e52b409b579efb9af35c7, type: 3}
   - {fileID: 6804534385603783512, guid: 1b9bf7728dd48f9439aca970aa23a34c, type: 3}
   - {fileID: 6804534385603783512, guid: 6cc5c6f3c6463744393131cbadd9bb20, type: 3}
+  - {fileID: 6804534385603783512, guid: 24fc06541d4cdf34bbdf0f1e561161dd, type: 3}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
