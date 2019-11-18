@@ -20,8 +20,8 @@ public class GameManager : MonoBehaviour
 
     public void GenerateRoom(bool _boolPosNeg1, bool _boolPosNeg2, Transform _trRoom)
     {
-        int _intDir1 = 0;
-        int _intDir2 = 0;
+        float _intDir1 = 0;
+        float _intDir2 = 0;
         Vector3 v3NewRoomPos;
         GameObject goNewRoom;
 
@@ -32,8 +32,8 @@ public class GameManager : MonoBehaviour
 
         if (_boolPosNeg1 && _boolPosNeg2)
         {
-            _intDir1 = 14;
-            _intDir2 = 14;
+            _intDir1 = 14.1f;
+            _intDir2 = 14.1f;
             v3NewRoomPos = new Vector3(_trRoom.position.x + _intDir1, _trRoom.position.y, _trRoom.position.z + _intDir2);
             GameObject _goNewRoom = Instantiate(goNewRoom, v3NewRoomPos, _trRoom.rotation);
             _goNewRoom.transform.GetChild(4).gameObject.SetActive(false);
@@ -41,8 +41,8 @@ public class GameManager : MonoBehaviour
 
         else if (_boolPosNeg1 && !_boolPosNeg2)
         {
-            _intDir1 = 14;
-            _intDir2 = -14;
+            _intDir1 = 14.1f;
+            _intDir2 = -14.1f;
             v3NewRoomPos = new Vector3(_trRoom.position.x + _intDir1, _trRoom.position.y, _trRoom.position.z + _intDir2);
             GameObject _goNewRoom = Instantiate(goNewRoom, v3NewRoomPos, _trRoom.rotation);
             _goNewRoom.transform.GetChild(3).gameObject.SetActive(false);
@@ -50,8 +50,8 @@ public class GameManager : MonoBehaviour
 
         else if (!_boolPosNeg1 && _boolPosNeg2)
         {
-            _intDir1 = -14;
-            _intDir2 = 14;
+            _intDir1 = -14.1f;
+            _intDir2 = 14.1f;
             v3NewRoomPos = new Vector3(_trRoom.position.x + _intDir1, _trRoom.position.y, _trRoom.position.z + _intDir2);
             GameObject _goNewRoom = Instantiate(goNewRoom, v3NewRoomPos, _trRoom.rotation);
             _goNewRoom.transform.GetChild(2).gameObject.SetActive(false);
@@ -59,8 +59,8 @@ public class GameManager : MonoBehaviour
 
         else if (!_boolPosNeg1 && !_boolPosNeg2)
         {
-            _intDir1 = -14;
-            _intDir2 = -14;
+            _intDir1 = -14.1f;
+            _intDir2 = -14.1f;
             v3NewRoomPos = new Vector3(_trRoom.position.x + _intDir1, _trRoom.position.y, _trRoom.position.z + _intDir2);
             GameObject _goNewRoom = Instantiate(goNewRoom, v3NewRoomPos, _trRoom.rotation);
             _goNewRoom.transform.GetChild(1).gameObject.SetActive(false);
