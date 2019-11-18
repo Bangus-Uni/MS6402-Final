@@ -151,20 +151,14 @@ public class Gun : MonoBehaviour
 
     void ThreeProngShot()
     {
-        Quaternion quatFirePointRot1 = Quaternion.Euler(trFirePoint.rotation.x, trFirePoint.rotation.y - 30, trFirePoint.rotation.z);
-        Quaternion quatFirePointRot2 = Quaternion.Euler(trFirePoint.rotation.x, trFirePoint.rotation.y, trFirePoint.rotation.z);
-        Quaternion quatFirePointRot3 = Quaternion.Euler(trFirePoint.rotation.x, trFirePoint.rotation.y + 30, trFirePoint.rotation.z);
-
-        Debug.Log(quatFirePointRot1);
-
-
-
-
         if (boolIsFiring)
         {
             flShotCounter -= Time.deltaTime;
             if (flShotCounter <= 0)
             {
+                Quaternion quatFirePointRot1 = Quaternion.Euler(trFirePoint.rotation.x, trFirePoint.rotation.y - 30, trFirePoint.rotation.z);
+                Quaternion quatFirePointRot2 = Quaternion.Euler(trFirePoint.rotation.x, trFirePoint.rotation.y, trFirePoint.rotation.z);
+                Quaternion quatFirePointRot3 = Quaternion.Euler(trFirePoint.rotation.x, trFirePoint.rotation.y + 30, trFirePoint.rotation.z);
                 flShotCounter = flTimeBetweenShots;
                 Bullet newBullet1 = Instantiate(bullet, trFirePoint.position, quatFirePointRot1) as Bullet;
                 Bullet newBullet2 = Instantiate(bullet, trFirePoint.position, quatFirePointRot2) as Bullet;
