@@ -19,6 +19,11 @@ public class Gun : MonoBehaviour
     int intWaveShotTicker = 0;
     bool boolWaveShotDir = true;
 
+    int intWaveShotTicker_DoubleLeft = 0;
+    bool boolWaveShotDir_DoubleLeft = true;
+    int intWaveShotTicker_DoubleRight = 0;
+    bool boolWaveShotDir_DoubleRight = true;
+
 
     // Start is called before the first frame update
     void Start()
@@ -51,7 +56,7 @@ public class Gun : MonoBehaviour
         }
         if (intGunType == 4)
         {
-            ThreeProngShot();
+            FiveProngShot();
         }
     }
 
@@ -156,16 +161,48 @@ public class Gun : MonoBehaviour
             flShotCounter -= Time.deltaTime;
             if (flShotCounter <= 0)
             {
-                Quaternion quatFirePointRot1 = Quaternion.Euler(trFirePoint.rotation.x, trFirePoint.rotation.y - 30, trFirePoint.rotation.z);
-                Quaternion quatFirePointRot2 = Quaternion.Euler(trFirePoint.rotation.x, trFirePoint.rotation.y, trFirePoint.rotation.z);
-                Quaternion quatFirePointRot3 = Quaternion.Euler(trFirePoint.rotation.x, trFirePoint.rotation.y + 30, trFirePoint.rotation.z);
+                Quaternion leftFirePoint = Quaternion.Euler(0, -30, 0);
+                Quaternion rightFirePoint = Quaternion.Euler(0, 30, 0);
+
                 flShotCounter = flTimeBetweenShots;
-                Bullet newBullet1 = Instantiate(bullet, trFirePoint.position, quatFirePointRot1) as Bullet;
-                Bullet newBullet2 = Instantiate(bullet, trFirePoint.position, quatFirePointRot2) as Bullet;
-                Bullet newBullet3 = Instantiate(bullet, trFirePoint.position, quatFirePointRot3) as Bullet;
+                Bullet newBullet1 = Instantiate(bullet, trFirePoint.position, trFirePoint.rotation * leftFirePoint) as Bullet;
+                Bullet newBullet2 = Instantiate(bullet, trFirePoint.position, trFirePoint.rotation) as Bullet;
+                Bullet newBullet3 = Instantiate(bullet, trFirePoint.position, trFirePoint.rotation * rightFirePoint) as Bullet;
                 newBullet1.flSpeed = flBulletSpeed;
                 newBullet2.flSpeed = flBulletSpeed;
                 newBullet3.flSpeed = flBulletSpeed;
+            }
+        }
+
+        else
+        {
+            flShotCounter = 0;
+        }
+    }
+
+    void FiveProngShot()
+    {
+        if (boolIsFiring)
+        {
+            flShotCounter -= Time.deltaTime;
+            if (flShotCounter <= 0)
+            {
+                Quaternion leftFirePoint = Quaternion.Euler(0, -25, 0);
+                Quaternion rightFirePoint = Quaternion.Euler(0, 25, 0);
+                Quaternion leftFirePoint2 = Quaternion.Euler(0, -50, 0);
+                Quaternion rightFirePoint2 = Quaternion.Euler(0, 50, 0);
+
+                flShotCounter = flTimeBetweenShots;
+                Bullet newBullet1 = Instantiate(bullet, trFirePoint.position, trFirePoint.rotation * leftFirePoint) as Bullet;
+                Bullet newBullet2 = Instantiate(bullet, trFirePoint.position, trFirePoint.rotation) as Bullet;
+                Bullet newBullet3 = Instantiate(bullet, trFirePoint.position, trFirePoint.rotation * rightFirePoint) as Bullet;
+                Bullet newBullet4 = Instantiate(bullet, trFirePoint.position, trFirePoint.rotation * leftFirePoint2) as Bullet;
+                Bullet newBullet5 = Instantiate(bullet, trFirePoint.position, trFirePoint.rotation * rightFirePoint2) as Bullet;
+                newBullet1.flSpeed = flBulletSpeed;
+                newBullet2.flSpeed = flBulletSpeed;
+                newBullet3.flSpeed = flBulletSpeed;
+                newBullet4.flSpeed = flBulletSpeed;
+                newBullet5.flSpeed = flBulletSpeed;
             }
         }
 
