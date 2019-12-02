@@ -18,4 +18,10 @@ public class Bullet : MonoBehaviour
     {
         transform.Translate(Vector3.forward * flSpeed * Time.deltaTime);
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("BulletHit");
+        Destroy(gameObject);
+    }
 }

@@ -5,16 +5,27 @@ using UnityEngine;
 public class Pickup : MonoBehaviour
 {
 
-    public int intGunType;
+    public int intPickupGunType;
     // Start is called before the first frame update
     void Start()
     {
-        intGunType = Mathf.RoundToInt(Random.Range(0.5f, 4.5f));
+        intPickupGunType = Mathf.RoundToInt(Random.Range(1.5f, 4.5f));
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Triggered");
+        if (other.gameObject.GetComponentInChildren<Gun>())
+        {
+            other.gameObject.GetComponentsInChildren<Gun>()[0].intGunType = intPickupGunType;
+            other.gameObject.GetComponentsInChildren<Gun>()[1].intGunType = intPickupGunType;
+        }
+        Destroy(gameObject);
     }
 }
