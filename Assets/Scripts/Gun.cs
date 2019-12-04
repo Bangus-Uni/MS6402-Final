@@ -34,11 +34,12 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q)) {
+       /*if (Input.GetKeyDown(KeyCode.Q))
+        {
             intGunType++;
             if (intGunType > 4) intGunType = 1;
             Debug.Log("Current Gun: " + intGunType);
-        }
+        }*/
 
 
 

@@ -5,6 +5,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject[] a_goRooms;
+    public GameObject goBossRoom;
+
+    public int intNoRooms;
+    public int intLevelSize = 4;
 
     // Start is called before the first frame update
     void Start()
@@ -24,11 +28,22 @@ public class GameManager : MonoBehaviour
         float _intDir2 = 0;
         Vector3 v3NewRoomPos;
         GameObject goNewRoom;
+        bool boolBossSpawned = false;
 
-        int intDice = Mathf.RoundToInt(Random.Range(0.5f, (a_goRooms.Length + 0.5f)));
+        if (intNoRooms == intLevelSize)
+        {
+            goNewRoom = goBossRoom;
+            boolBossSpawned = true;
+        }
 
-        goNewRoom = a_goRooms[intDice - 1];
+        else
+        {
+            int intDice = Mathf.RoundToInt(Random.Range(0.5f, (a_goRooms.Length + 0.5f)));
+            goNewRoom = a_goRooms[intDice - 1];
+            intNoRooms++;
+        }
 
+        //////////////////////////////
 
         if (_boolPosNeg1 && _boolPosNeg2)
         {
@@ -64,6 +79,19 @@ public class GameManager : MonoBehaviour
             v3NewRoomPos = new Vector3(_trRoom.position.x + _intDir1, _trRoom.position.y, _trRoom.position.z + _intDir2);
             GameObject _goNewRoom = Instantiate(goNewRoom, v3NewRoomPos, _trRoom.rotation);
             _goNewRoom.transform.GetChild(1).gameObject.SetActive(false);
+        }
+
+        ////////////////////////////
+        
+        if (boolBossSpawned)
+        {
+           Door[] a_AllDoors = FindObjectsOfType<Door>();
+
+            for (int i = 0; i < a_AllDoors.Length; i++)
+            {
+                a_AllDoors[i].gameObject.SetActive(false);
+            }
+
         }
     }
 }

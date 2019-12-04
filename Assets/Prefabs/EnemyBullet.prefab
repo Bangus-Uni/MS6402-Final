@@ -106,4 +106,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flSpeed: 8.5
-  flDestroyTime: 0.8
+  flDestroyTime: 0.3

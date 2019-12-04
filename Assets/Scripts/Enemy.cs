@@ -13,7 +13,7 @@ public class Enemy: MonoBehaviour
 
     private Vector3 v3MoveVelocity;
 
-    public Gun EnemyGun;
+    public Gun[] EnemyGun;
 
     void Start() {
         rbEnemy = GetComponent<Rigidbody>();
@@ -23,7 +23,11 @@ public class Enemy: MonoBehaviour
     void Update() {
 
        transform.LookAt(new Vector3(goPC.transform.position.x, transform.position.y, goPC.transform.position.z));
-       EnemyGun.boolIsFiring = true;
+        for (int i = 0; i < EnemyGun.Length; i++)
+        {
+            EnemyGun[i].boolIsFiring = true;
+        }
+        
     }
 
     private void FixedUpdate() {
