@@ -20,12 +20,12 @@ public class Pickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Triggered");
         if (other.gameObject.GetComponentInChildren<Gun>())
         {
+            Debug.Log("Triggered");
             other.gameObject.GetComponentsInChildren<Gun>()[0].intGunType = intPickupGunType;
             other.gameObject.GetComponentsInChildren<Gun>()[1].intGunType = intPickupGunType;
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
 }
