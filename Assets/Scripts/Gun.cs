@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
+    GameManager GM;
+
+    public bool boolPCGun = false;
+
     public bool boolIsFiring;
+    public int intLeftOrRight;
 
     public Bullet bullet;
     public float flBulletSpeed;
@@ -13,6 +18,11 @@ public class Gun : MonoBehaviour
     private float flShotCounter;
 
     public Transform trFirePoint;
+
+    public int intHeat = 0;
+    public int intMaxHeat = 100;
+    public bool boolHeatGen = false;
+    public bool boolOverHeat = false;
 
     public int intGunType = 1;
 
@@ -28,19 +38,27 @@ public class Gun : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GM = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-       /*if (Input.GetKeyDown(KeyCode.Q))
-        {
-            intGunType++;
-            if (intGunType > 4) intGunType = 1;
-            Debug.Log("Current Gun: " + intGunType);
-        }*/
+        if(boolPCGun) { 
+            if (intLeftOrRight == 1)
+            {
+                GM.LeftGunAmmo(intHeat, boolOverHeat);
+            }
 
+            if (intLeftOrRight == 2)
+            {
+                GM.RightGunAmmo(intHeat, boolOverHeat);
+            }
+
+            if (boolHeatGen) HeatGun();
+            Cooldown();
+            boolHeatGen = false;
+        }
 
 
         if (intGunType == 1)
@@ -63,8 +81,9 @@ public class Gun : MonoBehaviour
 
     void BasicShot()
     {
-        if (boolIsFiring)
+        if (boolIsFiring && !boolOverHeat)
         {
+            boolHeatGen = true;
             flShotCounter -= Time.deltaTime;
             if (flShotCounter <= 0)
             {
@@ -88,8 +107,9 @@ public class Gun : MonoBehaviour
 
 
 
-        if (boolIsFiring)
+        if (boolIsFiring && !boolOverHeat)
         {
+            boolHeatGen = true;
             flShotCounter -= Time.deltaTime;
             if (flShotCounter <= 0)
             {
@@ -121,8 +141,9 @@ public class Gun : MonoBehaviour
         Vector3 v3FirePointWaveLoc;
         
 
-        if (boolIsFiring)
+        if (boolIsFiring && !boolOverHeat)
         {
+            boolHeatGen = true;
             flShotCounter -= Time.deltaTime;
             if (flShotCounter <= 0)
             {
@@ -157,8 +178,9 @@ public class Gun : MonoBehaviour
 
     void ThreeProngShot()
     {
-        if (boolIsFiring)
+        if (boolIsFiring && !boolOverHeat)
         {
+            boolHeatGen = true;
             flShotCounter -= Time.deltaTime;
             if (flShotCounter <= 0)
             {
@@ -183,7 +205,7 @@ public class Gun : MonoBehaviour
 
     void FiveProngShot()
     {
-        if (boolIsFiring)
+        if (boolIsFiring && !boolOverHeat)
         {
             flShotCounter -= Time.deltaTime;
             if (flShotCounter <= 0)
@@ -211,5 +233,18 @@ public class Gun : MonoBehaviour
         {
             flShotCounter = 0;
         }
+    }
+
+    void HeatGun()
+    {
+        intHeat++;
+        if (intHeat == intMaxHeat) boolOverHeat = true;
+    }
+
+    void Cooldown()
+    {
+        if (intHeat == 0) boolOverHeat = false;
+        if (intHeat > 0 && !boolHeatGen) intHeat--;
+        if (intHeat < 0) intHeat = 0;
     }
 }

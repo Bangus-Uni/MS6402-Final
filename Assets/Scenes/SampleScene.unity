@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44989914, g: 0.4972279, b: 0.5608969, a: 1}
+  m_IndirectSpecularColor: {r: 0.4498996, g: 0.4972281, b: 0.56089705, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -294,11 +294,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9d6ea47ada1884e89db4dafe11bf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boolPCGun: 1
   boolIsFiring: 0
+  intLeftOrRight: 1
   bullet: {fileID: 2959296160918329401, guid: 8de3594141182b641af8dddef16fa16c, type: 3}
   flBulletSpeed: 20
   flTimeBetweenShots: 0.08
   trFirePoint: {fileID: 851762935}
+  intHeat: 0
+  intMaxHeat: 100
+  boolHeatGen: 0
+  boolOverHeat: 0
   intGunType: 1
 --- !u!1 &318425620
 GameObject:
@@ -368,7 +374,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 30
+  m_Text: 0
 --- !u!222 &318425623
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -445,7 +451,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 30
+  m_Text: 0
 --- !u!222 &618705696
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -499,11 +505,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9d6ea47ada1884e89db4dafe11bf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boolPCGun: 1
   boolIsFiring: 0
+  intLeftOrRight: 2
   bullet: {fileID: 2959296160918329401, guid: 8de3594141182b641af8dddef16fa16c, type: 3}
   flBulletSpeed: 20
   flTimeBetweenShots: 0.08
   trFirePoint: {fileID: 1437634563}
+  intHeat: 0
+  intMaxHeat: 100
+  boolHeatGen: 0
+  boolOverHeat: 0
   intGunType: 1
 --- !u!1 &705507993
 GameObject:
@@ -735,6 +747,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b841f87ab184e0f46a536990c29559fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  intPCHealth: 100
+  intPCMaxHealth: 100
   a_goRooms:
   - {fileID: 6804534385603783512, guid: 9a0bbb34886e52b409b579efb9af35c7, type: 3}
   - {fileID: 6804534385603783512, guid: 1b9bf7728dd48f9439aca970aa23a34c, type: 3}
@@ -744,6 +758,9 @@ MonoBehaviour:
     type: 3}
   intNoRooms: 0
   intLevelSize: 4
+  txtPCHealth: {fileID: 1005073913}
+  txtLeftGunAmmo: {fileID: 618705695}
+  txtRightGunAmmo: {fileID: 318425622}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,6 +773,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -843,6 +861,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 105021694}
   offset: {x: 0, y: 0, z: 0}
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f12b523323ce37f468b419c5a36ef436, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shader: {fileID: 4800000, guid: 6236a715e917fc944814f24a8e077d77, type: 3}
+  lineWidth: 1.14
+  hardness: 0.682
+  displacementSpeed: 0.002
 --- !u!1 &1005073911
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,7 +911,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 45, y: -35}
+  m_AnchoredPosition: {x: 93.3, y: -35}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1005073913
@@ -905,7 +939,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Enemy: MonoBehaviour
 {
+
+    public int intHealth;
+    public int intMaxHealth;
     public float flMoveSpeed = 5;
     private Rigidbody rbEnemy;
 
@@ -18,6 +21,7 @@ public class Enemy: MonoBehaviour
     void Start() {
         rbEnemy = GetComponent<Rigidbody>();
         goPC = GameObject.FindGameObjectWithTag("PC");
+        intHealth = intMaxHealth;
     }
 
     void Update() {
@@ -32,6 +36,17 @@ public class Enemy: MonoBehaviour
 
     private void FixedUpdate() {
         transform.position = Vector3.MoveTowards(transform.position, goPC.transform.position, flMoveSpeed * Time.deltaTime);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<Bullet>())
+        {
+            intHealth--;
+            Destroy(collision.gameObject);
+
+            if (intHealth <= 0) Destroy(gameObject);
+        }
     }
 
 }

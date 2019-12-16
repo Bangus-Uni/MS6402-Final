@@ -1,25 +1,41 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public int intPCHealth = 100;
+    public int intPCMaxHealth = 100;
+
+
     public GameObject[] a_goRooms;
     public GameObject goBossRoom;
 
     public int intNoRooms;
     public int intLevelSize = 4;
 
+    public Text txtPCHealth;
+    public Text txtLeftGunAmmo;
+    public Text txtRightGunAmmo;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        intPCHealth = intPCMaxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    void GameOver()
+    {
+        txtPCHealth.text = "Dead - Restart";
+        Time.timeScale = 0;
     }
 
     public void GenerateRoom(bool _boolPosNeg1, bool _boolPosNeg2, Transform _trRoom)
@@ -93,5 +109,29 @@ public class GameManager : MonoBehaviour
             }
 
         }
+    }
+
+    public void PCHit()
+    {
+        intPCHealth--;
+        txtPCHealth.text = intPCHealth.ToString();
+        if (intPCHealth <= 0)
+        {
+            GameOver();
+        }
+    }
+
+    public void LeftGunAmmo(int _intAmmo, bool _boolOverHeat)
+    {
+        if (_boolOverHeat) txtLeftGunAmmo.color = Color.red;
+        else txtLeftGunAmmo.color = Color.white;
+        txtLeftGunAmmo.text = _intAmmo.ToString();
+    }
+
+    public void RightGunAmmo(int _intAmmo, bool _boolOverHeat)
+    {
+        if (_boolOverHeat) txtRightGunAmmo.color = Color.red;
+        else txtRightGunAmmo.color = Color.white;
+        txtRightGunAmmo.text = _intAmmo.ToString();
     }
 }

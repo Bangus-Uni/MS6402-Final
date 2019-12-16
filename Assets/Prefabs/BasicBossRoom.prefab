@@ -92,11 +92,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9d6ea47ada1884e89db4dafe11bf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boolPCGun: 0
   boolIsFiring: 0
+  intLeftOrRight: 0
   bullet: {fileID: 2959296160918329401, guid: 5d266d5f842a9994ab6ce7d4389f1cf6, type: 3}
   flBulletSpeed: 40
   flTimeBetweenShots: 0.0009
   trFirePoint: {fileID: 8887237048652017323}
+  intHeat: 0
+  intMaxHeat: 100
+  boolHeatGen: 0
+  boolOverHeat: 0
   intGunType: 1
 --- !u!1 &521761190508059886
 GameObject:
@@ -302,11 +308,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9d6ea47ada1884e89db4dafe11bf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boolPCGun: 0
   boolIsFiring: 0
+  intLeftOrRight: 0
   bullet: {fileID: 2959296160918329401, guid: 5d266d5f842a9994ab6ce7d4389f1cf6, type: 3}
   flBulletSpeed: 40
   flTimeBetweenShots: 0.0009
   trFirePoint: {fileID: 4486057402694437252}
+  intHeat: 0
+  intMaxHeat: 100
+  boolHeatGen: 0
+  boolOverHeat: 0
   intGunType: 1
 --- !u!1 &1085156647194896708
 GameObject:
@@ -400,11 +412,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9d6ea47ada1884e89db4dafe11bf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boolPCGun: 0
   boolIsFiring: 0
+  intLeftOrRight: 0
   bullet: {fileID: 2959296160918329401, guid: 5d266d5f842a9994ab6ce7d4389f1cf6, type: 3}
   flBulletSpeed: 40
   flTimeBetweenShots: 0.0009
   trFirePoint: {fileID: 3779581081952574404}
+  intHeat: 0
+  intMaxHeat: 100
+  boolHeatGen: 0
+  boolOverHeat: 0
   intGunType: 1
 --- !u!1 &1884705839374270502
 GameObject:
@@ -610,11 +628,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9d6ea47ada1884e89db4dafe11bf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boolPCGun: 0
   boolIsFiring: 0
+  intLeftOrRight: 0
   bullet: {fileID: 2959296160918329401, guid: 5d266d5f842a9994ab6ce7d4389f1cf6, type: 3}
   flBulletSpeed: 40
   flTimeBetweenShots: 0.0009
   trFirePoint: {fileID: 6834350609927263330}
+  intHeat: 0
+  intMaxHeat: 100
+  boolHeatGen: 0
+  boolOverHeat: 0
   intGunType: 1
 --- !u!1 &3047491954428782848
 GameObject:
@@ -850,11 +874,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9d6ea47ada1884e89db4dafe11bf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boolPCGun: 0
   boolIsFiring: 0
+  intLeftOrRight: 0
   bullet: {fileID: 2959296160918329401, guid: 5d266d5f842a9994ab6ce7d4389f1cf6, type: 3}
   flBulletSpeed: 40
   flTimeBetweenShots: 0.0009
   trFirePoint: {fileID: 6416076802599845610}
+  intHeat: 0
+  intMaxHeat: 100
+  boolHeatGen: 0
+  boolOverHeat: 0
   intGunType: 1
 --- !u!1 &3772992640675692636
 GameObject:
@@ -1086,11 +1116,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9d6ea47ada1884e89db4dafe11bf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boolPCGun: 0
   boolIsFiring: 0
+  intLeftOrRight: 0
   bullet: {fileID: 2959296160918329401, guid: 5d266d5f842a9994ab6ce7d4389f1cf6, type: 3}
   flBulletSpeed: 40
   flTimeBetweenShots: 0.0009
   trFirePoint: {fileID: 6625908378316968845}
+  intHeat: 0
+  intMaxHeat: 100
+  boolHeatGen: 0
+  boolOverHeat: 0
   intGunType: 1
 --- !u!1 &4493691004630618359
 GameObject:
@@ -1406,11 +1442,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9d6ea47ada1884e89db4dafe11bf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boolPCGun: 0
   boolIsFiring: 0
+  intLeftOrRight: 0
   bullet: {fileID: 2959296160918329401, guid: 5d266d5f842a9994ab6ce7d4389f1cf6, type: 3}
   flBulletSpeed: 40
   flTimeBetweenShots: 0.0009
   trFirePoint: {fileID: 1422953747071839250}
+  intHeat: 0
+  intMaxHeat: 100
+  boolHeatGen: 0
+  boolOverHeat: 0
   intGunType: 1
 --- !u!1 &6130839907445530161
 GameObject:
@@ -1504,11 +1546,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9d6ea47ada1884e89db4dafe11bf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boolPCGun: 0
   boolIsFiring: 0
+  intLeftOrRight: 0
   bullet: {fileID: 2959296160918329401, guid: 5d266d5f842a9994ab6ce7d4389f1cf6, type: 3}
   flBulletSpeed: 40
   flTimeBetweenShots: 0.0009
   trFirePoint: {fileID: 8140441833471986649}
+  intHeat: 0
+  intMaxHeat: 100
+  boolHeatGen: 0
+  boolOverHeat: 0
   intGunType: 1
 --- !u!1 &6560945415703381466
 GameObject:
@@ -1602,11 +1650,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9d6ea47ada1884e89db4dafe11bf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boolPCGun: 0
   boolIsFiring: 0
+  intLeftOrRight: 0
   bullet: {fileID: 2959296160918329401, guid: 5d266d5f842a9994ab6ce7d4389f1cf6, type: 3}
   flBulletSpeed: 40
   flTimeBetweenShots: 0.0009
   trFirePoint: {fileID: 486031882311991584}
+  intHeat: 0
+  intMaxHeat: 100
+  boolHeatGen: 0
+  boolOverHeat: 0
   intGunType: 1
 --- !u!1 &6804534385603783512
 GameObject:
@@ -1829,11 +1883,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9d6ea47ada1884e89db4dafe11bf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boolPCGun: 0
   boolIsFiring: 0
+  intLeftOrRight: 0
   bullet: {fileID: 2959296160918329401, guid: 5d266d5f842a9994ab6ce7d4389f1cf6, type: 3}
   flBulletSpeed: 40
   flTimeBetweenShots: 0.0009
   trFirePoint: {fileID: 4315497781370610288}
+  intHeat: 0
+  intMaxHeat: 100
+  boolHeatGen: 0
+  boolOverHeat: 0
   intGunType: 1
 --- !u!1 &7050713069277800824
 GameObject:
@@ -1987,11 +2047,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9d6ea47ada1884e89db4dafe11bf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boolPCGun: 0
   boolIsFiring: 0
+  intLeftOrRight: 0
   bullet: {fileID: 2959296160918329401, guid: 5d266d5f842a9994ab6ce7d4389f1cf6, type: 3}
   flBulletSpeed: 40
   flTimeBetweenShots: 0.0009
   trFirePoint: {fileID: 1974540118705914075}
+  intHeat: 0
+  intMaxHeat: 100
+  boolHeatGen: 0
+  boolOverHeat: 0
   intGunType: 1
 --- !u!1 &7787547686726509614
 GameObject:
@@ -2115,11 +2181,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9d6ea47ada1884e89db4dafe11bf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boolPCGun: 0
   boolIsFiring: 0
+  intLeftOrRight: 0
   bullet: {fileID: 2959296160918329401, guid: 5d266d5f842a9994ab6ce7d4389f1cf6, type: 3}
   flBulletSpeed: 40
   flTimeBetweenShots: 0.0009
   trFirePoint: {fileID: 5019003951704270264}
+  intHeat: 0
+  intMaxHeat: 100
+  boolHeatGen: 0
+  boolOverHeat: 0
   intGunType: 1
 --- !u!1 &8357926879570288120
 GameObject:
@@ -2330,7 +2402,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3351f333994709e408ec1a3512103c14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flMoveSpeed: 1
+  intHealth: 0
+  intMaxHealth: 100
+  flMoveSpeed: 0.3
   goPC: {fileID: 0}
   flRange: 10
   EnemyGun:

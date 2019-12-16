@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PC : MonoBehaviour
 {
+    GameManager GM;
     public float flMoveSpeed = 5;
     private Rigidbody rbPC;
 
@@ -15,6 +16,7 @@ public class PC : MonoBehaviour
     public Gun LeftGun;
     public Gun RightGun;
     void Start() {
+        GM = FindObjectOfType<GameManager>();
         rbPC = GetComponent<Rigidbody>();
         camMainCam = FindObjectOfType<Camera>();
     }
@@ -54,6 +56,15 @@ public class PC : MonoBehaviour
 
     private void FixedUpdate() {
         rbPC.velocity = v3MoveVelocity;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<Bullet>())
+        {
+            GM.PCHit();
+            Destroy(collision.gameObject);
+        }
     }
 
 
