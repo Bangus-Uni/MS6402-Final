@@ -95,7 +95,7 @@ MonoBehaviour:
   boolPCGun: 0
   boolIsFiring: 0
   intLeftOrRight: 0
-  bullet: {fileID: 2959296160918329401, guid: 5d266d5f842a9994ab6ce7d4389f1cf6, type: 3}
+  bullet: {fileID: 2667172607754335555, guid: c3286fc01511895448101c337233ba0c, type: 3}
   flBulletSpeed: 40
   flTimeBetweenShots: 0.0009
   trFirePoint: {fileID: 8887237048652017323}
@@ -311,7 +311,7 @@ MonoBehaviour:
   boolPCGun: 0
   boolIsFiring: 0
   intLeftOrRight: 0
-  bullet: {fileID: 2959296160918329401, guid: 5d266d5f842a9994ab6ce7d4389f1cf6, type: 3}
+  bullet: {fileID: 2667172607754335555, guid: c3286fc01511895448101c337233ba0c, type: 3}
   flBulletSpeed: 40
   flTimeBetweenShots: 0.0009
   trFirePoint: {fileID: 4486057402694437252}
@@ -415,7 +415,7 @@ MonoBehaviour:
   boolPCGun: 0
   boolIsFiring: 0
   intLeftOrRight: 0
-  bullet: {fileID: 2959296160918329401, guid: 5d266d5f842a9994ab6ce7d4389f1cf6, type: 3}
+  bullet: {fileID: 2667172607754335555, guid: c3286fc01511895448101c337233ba0c, type: 3}
   flBulletSpeed: 40
   flTimeBetweenShots: 0.0009
   trFirePoint: {fileID: 3779581081952574404}
@@ -631,7 +631,7 @@ MonoBehaviour:
   boolPCGun: 0
   boolIsFiring: 0
   intLeftOrRight: 0
-  bullet: {fileID: 2959296160918329401, guid: 5d266d5f842a9994ab6ce7d4389f1cf6, type: 3}
+  bullet: {fileID: 2667172607754335555, guid: c3286fc01511895448101c337233ba0c, type: 3}
   flBulletSpeed: 40
   flTimeBetweenShots: 0.0009
   trFirePoint: {fileID: 6834350609927263330}
@@ -877,7 +877,7 @@ MonoBehaviour:
   boolPCGun: 0
   boolIsFiring: 0
   intLeftOrRight: 0
-  bullet: {fileID: 2959296160918329401, guid: 5d266d5f842a9994ab6ce7d4389f1cf6, type: 3}
+  bullet: {fileID: 2667172607754335555, guid: c3286fc01511895448101c337233ba0c, type: 3}
   flBulletSpeed: 40
   flTimeBetweenShots: 0.0009
   trFirePoint: {fileID: 6416076802599845610}
@@ -1119,7 +1119,7 @@ MonoBehaviour:
   boolPCGun: 0
   boolIsFiring: 0
   intLeftOrRight: 0
-  bullet: {fileID: 2959296160918329401, guid: 5d266d5f842a9994ab6ce7d4389f1cf6, type: 3}
+  bullet: {fileID: 2667172607754335555, guid: c3286fc01511895448101c337233ba0c, type: 3}
   flBulletSpeed: 40
   flTimeBetweenShots: 0.0009
   trFirePoint: {fileID: 6625908378316968845}
@@ -1445,7 +1445,7 @@ MonoBehaviour:
   boolPCGun: 0
   boolIsFiring: 0
   intLeftOrRight: 0
-  bullet: {fileID: 2959296160918329401, guid: 5d266d5f842a9994ab6ce7d4389f1cf6, type: 3}
+  bullet: {fileID: 2667172607754335555, guid: c3286fc01511895448101c337233ba0c, type: 3}
   flBulletSpeed: 40
   flTimeBetweenShots: 0.0009
   trFirePoint: {fileID: 1422953747071839250}
@@ -1549,7 +1549,7 @@ MonoBehaviour:
   boolPCGun: 0
   boolIsFiring: 0
   intLeftOrRight: 0
-  bullet: {fileID: 2959296160918329401, guid: 5d266d5f842a9994ab6ce7d4389f1cf6, type: 3}
+  bullet: {fileID: 2667172607754335555, guid: c3286fc01511895448101c337233ba0c, type: 3}
   flBulletSpeed: 40
   flTimeBetweenShots: 0.0009
   trFirePoint: {fileID: 8140441833471986649}
@@ -1653,7 +1653,7 @@ MonoBehaviour:
   boolPCGun: 0
   boolIsFiring: 0
   intLeftOrRight: 0
-  bullet: {fileID: 2959296160918329401, guid: 5d266d5f842a9994ab6ce7d4389f1cf6, type: 3}
+  bullet: {fileID: 2667172607754335555, guid: c3286fc01511895448101c337233ba0c, type: 3}
   flBulletSpeed: 40
   flTimeBetweenShots: 0.0009
   trFirePoint: {fileID: 486031882311991584}
@@ -1886,7 +1886,7 @@ MonoBehaviour:
   boolPCGun: 0
   boolIsFiring: 0
   intLeftOrRight: 0
-  bullet: {fileID: 2959296160918329401, guid: 5d266d5f842a9994ab6ce7d4389f1cf6, type: 3}
+  bullet: {fileID: 2667172607754335555, guid: c3286fc01511895448101c337233ba0c, type: 3}
   flBulletSpeed: 40
   flTimeBetweenShots: 0.0009
   trFirePoint: {fileID: 4315497781370610288}
@@ -2050,7 +2050,7 @@ MonoBehaviour:
   boolPCGun: 0
   boolIsFiring: 0
   intLeftOrRight: 0
-  bullet: {fileID: 2959296160918329401, guid: 5d266d5f842a9994ab6ce7d4389f1cf6, type: 3}
+  bullet: {fileID: 2667172607754335555, guid: c3286fc01511895448101c337233ba0c, type: 3}
   flBulletSpeed: 40
   flTimeBetweenShots: 0.0009
   trFirePoint: {fileID: 1974540118705914075}
@@ -2184,7 +2184,7 @@ MonoBehaviour:
   boolPCGun: 0
   boolIsFiring: 0
   intLeftOrRight: 0
-  bullet: {fileID: 2959296160918329401, guid: 5d266d5f842a9994ab6ce7d4389f1cf6, type: 3}
+  bullet: {fileID: 2667172607754335555, guid: c3286fc01511895448101c337233ba0c, type: 3}
   flBulletSpeed: 40
   flTimeBetweenShots: 0.0009
   trFirePoint: {fileID: 5019003951704270264}
