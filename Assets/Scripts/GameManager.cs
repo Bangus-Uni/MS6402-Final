@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public int intPCHealth = 100;
-    public int intPCMaxHealth = 100;
+    public int intPCHealth = 200;
+    public int intPCMaxHealth = 200;
+
+    public int intPCArmor = 100;
+    public int intPCMaxArmor = 100;
 
 
     public GameObject[] a_goRooms;
@@ -15,7 +18,8 @@ public class GameManager : MonoBehaviour
     public int intNoRooms;
     public int intLevelSize = 4;
 
-    public Text txtPCHealth;
+    public Image imgPCHealth;
+    public Image imgPCArmor;
     public Text txtLeftGunAmmo;
     public Text txtRightGunAmmo;
 
@@ -24,6 +28,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         intPCHealth = intPCMaxHealth;
+        intPCArmor = intPCMaxArmor;
     }
 
     // Update is called once per frame
@@ -34,7 +39,7 @@ public class GameManager : MonoBehaviour
 
     void GameOver()
     {
-        txtPCHealth.text = "Dead - Restart";
+        //txtPCHealth.text = "Dead - Restart";
         Time.timeScale = 0;
     }
 
@@ -113,8 +118,16 @@ public class GameManager : MonoBehaviour
 
     public void PCHit()
     {
-        intPCHealth--;
-        txtPCHealth.text = intPCHealth.ToString();
+        if (intPCArmor > 0) {
+            intPCArmor--;
+            imgPCArmor.rectTransform.sizeDelta = new Vector2(intPCArmor, 22);
+        }
+
+        else {
+            intPCHealth--;
+            imgPCHealth.rectTransform.sizeDelta = new Vector2(intPCHealth * 2, 22);
+        }
+
         if (intPCHealth <= 0)
         {
             GameOver();
@@ -125,13 +138,13 @@ public class GameManager : MonoBehaviour
     {
         if (_boolOverHeat) txtLeftGunAmmo.color = Color.red;
         else txtLeftGunAmmo.color = Color.white;
-        txtLeftGunAmmo.text = _intAmmo.ToString();
+        txtLeftGunAmmo.text = _intAmmo.ToString() + "%";
     }
 
     public void RightGunAmmo(int _intAmmo, bool _boolOverHeat)
     {
         if (_boolOverHeat) txtRightGunAmmo.color = Color.red;
         else txtRightGunAmmo.color = Color.white;
-        txtRightGunAmmo.text = _intAmmo.ToString();
+        txtRightGunAmmo.text = _intAmmo.ToString() + "%";
     }
 }
