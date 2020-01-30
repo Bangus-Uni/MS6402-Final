@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    GameManager GM;
+    public GameManager GM;
 
     public bool boolPCGun = false;
 

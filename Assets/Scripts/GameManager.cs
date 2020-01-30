@@ -11,6 +11,15 @@ public class GameManager : MonoBehaviour
     public int intPCArmor = 100;
     public int intPCMaxArmor = 100;
 
+    public int intTotalCorruption = 0;
+    public int intLACorruption = 0;
+    public int intLLCorruption = 0;
+    public int intRACorruption = 0;
+    public int intRLCorruption = 0;
+    public int intCorruptionThreshold = 50;
+    public int intMaxCorrupted = 100;
+
+    public bool boolCorrupted = false;
 
     public GameObject[] a_goRooms;
     public GameObject goBossRoom;
@@ -25,6 +34,8 @@ public class GameManager : MonoBehaviour
     public Image imgPCArmor;
     public Text txtLeftGunAmmo;
     public Text txtRightGunAmmo;
+    public Text txtLeftGunName;
+    public Text txtRightGunName;
     public Text txtCurrentLevel;
     public Text txtCurrentZone;
 
@@ -40,7 +51,7 @@ public class GameManager : MonoBehaviour
     public static Bullet BasicBullet; 
     #endregion
 
-    Dictionary<int, GunType> GunDictionary = new Dictionary<int, GunType>();
+    public Dictionary<int, GunType> GunDictionary = new Dictionary<int, GunType>();
 
     // Guns To Import
     #region Guns
@@ -51,16 +62,21 @@ public class GameManager : MonoBehaviour
     GunType gun4 = new GunType("The Wiggler", 1, BasicBullet, 20, 0.08f, false, 0);
     GunType gun5 = new GunType("Spread Em", 1, BasicBullet, 20, 0.08f, false, 0);
 
+
     GunType guntemp = null;
 
     #endregion
 
+    private void Awake()
+    {
+        LoadBullets();
+        AddGuns();
+
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        LoadBullets();
-        AddGuns();
         intPCHealth = intPCMaxHealth;
         intPCArmor = intPCMaxArmor;
     }
@@ -82,6 +98,7 @@ public class GameManager : MonoBehaviour
         GunDictionary.Add(3, gun3);
         GunDictionary.Add(4, gun4);
         GunDictionary.Add(5, gun5);
+        Debug.Log("GunsLoaded");
     }
 
     void GameOver()
@@ -160,6 +177,25 @@ public class GameManager : MonoBehaviour
                 a_AllDoors[i].gameObject.SetActive(false);
             }
 
+        }
+    }
+
+    public void SetLeftGun(GunType GunPickup) {
+        txtLeftGunName.text = GunPickup.strGTGunName;
+        if (GunPickup.boolGTCorrupted)
+        {
+            intLACorruption = GunPickup.intGTCorruption;
+            intTotalCorruption = intLACorruption + intLLCorruption + intRACorruption + intRLCorruption;
+        }   
+    }
+
+    public void SetRightGun(GunType GunPickup)
+    {
+        txtRightGunName.text = GunPickup.strGTGunName;
+        if (GunPickup.boolGTCorrupted)
+        {
+            intRACorruption = GunPickup.intGTCorruption;
+            intTotalCorruption = intLACorruption + intLLCorruption + intRACorruption + intRLCorruption;
         }
     }
 
