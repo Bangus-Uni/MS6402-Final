@@ -18,14 +18,23 @@ public class Pickup : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.GetComponentInChildren<Gun>())
         {
             Debug.Log("Triggered");
-            other.gameObject.GetComponentsInChildren<Gun>()[0].intGunType = intPickupGunType;
-            other.gameObject.GetComponentsInChildren<Gun>()[1].intGunType = intPickupGunType;
-            Destroy(gameObject);
+            if (Input.GetKey(KeyCode.E))
+            {
+                Debug.Log("Active - Left");
+                other.gameObject.GetComponentInChildren<LeftGun>().intGunType = intPickupGunType;
+                Destroy(gameObject);
+            }
+            else if (Input.GetKey(KeyCode.R))
+            {
+                Debug.Log("Active - Right");
+                other.gameObject.GetComponentInChildren<RightGun>().intGunType = intPickupGunType;
+                Destroy(gameObject);
+            }
         }
     }
 }

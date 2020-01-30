@@ -230,8 +230,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flMoveSpeed: 7
-  LeftGun: {fileID: 125736202}
-  RightGun: {fileID: 674750717}
+  LeftGun: {fileID: 0}
+  RightGun: {fileID: 0}
 --- !u!54 &105021696
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -366,7 +366,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 125736200}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf9d6ea47ada1884e89db4dafe11bf51, type: 3}
+  m_Script: {fileID: 11500000, guid: 0291ad8890fed7b44b715d15a9872bbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   boolPCGun: 1
@@ -796,7 +796,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 674750715}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf9d6ea47ada1884e89db4dafe11bf51, type: 3}
+  m_Script: {fileID: 11500000, guid: 75c21fc086b85e8439c08f1d39ffb819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   boolPCGun: 1
@@ -884,7 +884,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 2.3509887e-38, z: -8.800925e+12, w: -268435550}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
