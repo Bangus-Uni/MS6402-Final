@@ -18,15 +18,49 @@ public class GameManager : MonoBehaviour
     public int intNoRooms;
     public int intLevelSize = 4;
 
+    public int intCurrentLevel = 1;
+    public int intCurrentZone = 1;
+
     public Image imgPCHealth;
     public Image imgPCArmor;
     public Text txtLeftGunAmmo;
     public Text txtRightGunAmmo;
+    public Text txtCurrentLevel;
+    public Text txtCurrentZone;
+
+
+    [Header("Bullets")]
+    // List Of Bullets to pick from
+    #region AddBullets
+    public Bullet _BasicBullet;
+    #endregion
+
+    // List Of Bullets to pick from
+    #region Bullets
+    public static Bullet BasicBullet; 
+    #endregion
+
+    Dictionary<int, GunType> GunDictionary = new Dictionary<int, GunType>();
+
+    // Guns To Import
+    #region Guns
+
+    GunType gun1 = new GunType("The PeaShooter", 1, BasicBullet, 20, 0.08f, false, 0);
+    GunType gun2 = new GunType("The Better Peashooter", 1, BasicBullet, 20, 0.04f, false, 0);
+    GunType gun3 = new GunType("Wide Load", 1, BasicBullet, 20, 0.08f, false, 0);
+    GunType gun4 = new GunType("The Wiggler", 1, BasicBullet, 20, 0.08f, false, 0);
+    GunType gun5 = new GunType("Spread Em", 1, BasicBullet, 20, 0.08f, false, 0);
+
+    GunType guntemp = null;
+
+    #endregion
 
 
     // Start is called before the first frame update
     void Start()
     {
+        LoadBullets();
+        AddGuns();
         intPCHealth = intPCMaxHealth;
         intPCArmor = intPCMaxArmor;
     }
@@ -35,6 +69,19 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void LoadBullets()
+    {
+        BasicBullet = _BasicBullet;
+    }
+
+    public void AddGuns() {
+        GunDictionary.Add(1, gun1);
+        GunDictionary.Add(2, gun2);
+        GunDictionary.Add(3, gun3);
+        GunDictionary.Add(4, gun4);
+        GunDictionary.Add(5, gun5);
     }
 
     void GameOver()

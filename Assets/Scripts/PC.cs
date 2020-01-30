@@ -11,14 +11,13 @@ public class PC : MonoBehaviour
     private Vector3 v3MoveInput;
     private Vector3 v3MoveVelocity;
 
-    private Camera camMainCam;
+    public Camera camMainCam;
 
     public Gun LeftGun;
     public Gun RightGun;
     void Start() {
         GM = FindObjectOfType<GameManager>();
         rbPC = GetComponent<Rigidbody>();
-        camMainCam = FindObjectOfType<Camera>();
     }
 
     void Update() {

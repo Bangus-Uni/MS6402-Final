@@ -29,11 +29,6 @@ public class Gun : MonoBehaviour
     int intWaveShotTicker = 0;
     bool boolWaveShotDir = true;
 
-    int intWaveShotTicker_DoubleLeft = 0;
-    bool boolWaveShotDir_DoubleLeft = true;
-    int intWaveShotTicker_DoubleRight = 0;
-    bool boolWaveShotDir_DoubleRight = true;
-
 
     // Start is called before the first frame update
     void Start()
@@ -207,6 +202,7 @@ public class Gun : MonoBehaviour
     {
         if (boolIsFiring && !boolOverHeat)
         {
+            boolHeatGen = true;
             flShotCounter -= Time.deltaTime;
             if (flShotCounter <= 0)
             {

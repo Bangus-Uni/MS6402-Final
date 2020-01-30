@@ -1,18 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class GunType : MonoBehaviour
+public class GunType : IComparable<GunType>
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+
+    public string strGTGunName;
+    public int intGTFireType;
+    public Bullet GTBullet;
+    public float flGTBulletSpeed;
+    public float flGTTimeBetweenShots;
+    public bool boolGTCorrupted;
+    public int intGTCorruption;
+
+    public GunType(string _strGTGunName, int _intGTFireType, Bullet _GTBullet, float _flGTBulletSpeed, float _flGTTimeBetweenShots, bool _boolGTCorrupted, int _intGTCorruption) {
+        strGTGunName = _strGTGunName;
+        intGTFireType = _intGTFireType;
+        GTBullet = _GTBullet;
+        flGTBulletSpeed = _flGTBulletSpeed;
+        flGTTimeBetweenShots = _flGTTimeBetweenShots;
+        boolGTCorrupted = _boolGTCorrupted;
+        intGTCorruption = _intGTCorruption;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public int CompareTo(GunType other) {
+        if (other == null) {
+            return 1;
+        }
+
+        return intGTFireType = other.intGTFireType;
     }
+
 }
