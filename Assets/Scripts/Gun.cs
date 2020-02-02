@@ -158,7 +158,6 @@ public class Gun : MonoBehaviour
 
                 if (boolWaveShotDir) intWaveShotTicker++;
 
-                Debug.Log(intWaveShotTicker);
                 v3FirePointWaveLoc = new Vector3(a_flWaveLocs[intWaveShotTicker], trFirePoint.position.y, trFirePoint.position.z);
                 Bullet newBullet = Instantiate(bullet, v3FirePointWaveLoc, trFirePoint.rotation) as Bullet;
                 newBullet.flSpeed = flBulletSpeed;

@@ -48,28 +48,43 @@ public class GameManager : MonoBehaviour
 
     // List Of Bullets to pick from
     #region Bullets
-    public static Bullet BasicBullet; 
+    static Bullet BasicBullet;
+    #endregion
+
+    [Header("Popup")]
+    #region Popup
+    public bool boolPopupActive;
+    public GameObject goPopup;
+    public Text txtPopupTitle;
+    public Text txtPopupDesc;
+    public Text txtPopupEffect;
     #endregion
 
     public Dictionary<int, GunType> GunDictionary = new Dictionary<int, GunType>();
-
     // Guns To Import
     #region Guns
-
-    GunType gun1 = new GunType("The PeaShooter", 1, BasicBullet, 20, 0.08f, false, 0);
-    GunType gun2 = new GunType("The Better Peashooter", 1, BasicBullet, 20, 0.04f, false, 0);
-    GunType gun3 = new GunType("Wide Load", 1, BasicBullet, 20, 0.08f, false, 0);
-    GunType gun4 = new GunType("The Wiggler", 1, BasicBullet, 20, 0.08f, false, 0);
-    GunType gun5 = new GunType("Spread Em", 1, BasicBullet, 20, 0.08f, false, 0);
-
+    GunType gun1;
+    GunType gun2;
+    GunType gun3;
+    GunType gun4;
+    GunType gun5;
 
     GunType guntemp = null;
-
     #endregion
+    void CreateGuns()
+    {
+
+        gun1 = new GunType("The PeaShooter", "Gun 1", 1, BasicBullet, 20, 0.08f, false, 0);
+        gun2 = new GunType("The Better Peashooter", "Gun 2", 1, BasicBullet, 20, 0.04f, false, 0);
+        gun3 = new GunType("Wide Load", "Gun 3", 2, BasicBullet, 20, 0.08f, false, 0);
+        gun4 = new GunType("The Wiggler", "Gun 4", 3, BasicBullet, 20, 0.08f, false, 0);
+        gun5 = new GunType("Spread Em", "Gun 5", 4, BasicBullet, 20, 0.08f, false, 0);
+    }
 
     private void Awake()
     {
         LoadBullets();
+        CreateGuns();
         AddGuns();
 
     }
@@ -77,6 +92,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        goPopup.SetActive(false);
+        SetLeftGun(gun1);
+        SetRightGun(gun1);
         intPCHealth = intPCMaxHealth;
         intPCArmor = intPCMaxArmor;
     }
@@ -229,5 +247,21 @@ public class GameManager : MonoBehaviour
         if (_boolOverHeat) txtRightGunAmmo.color = Color.red;
         else txtRightGunAmmo.color = Color.white;
         txtRightGunAmmo.text = _intAmmo.ToString() + "%";
+    }
+
+    public void Popup(GunType _GunPickup) {
+        if (!boolPopupActive)
+        {
+            txtPopupTitle.text = _GunPickup.strGTGunName;
+            txtPopupDesc.text = _GunPickup.strGTGunDesc;
+            goPopup.SetActive(true);
+            boolPopupActive = true;
+        }
+
+        else if (boolPopupActive)
+        {
+            goPopup.SetActive(false);
+            boolPopupActive = false;
+        }
     }
 }
