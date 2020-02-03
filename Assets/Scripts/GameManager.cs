@@ -68,6 +68,7 @@ public class GameManager : MonoBehaviour
     GunType gun3;
     GunType gun4;
     GunType gun5;
+    GunType gun6;
 
     GunType guntemp = null;
     #endregion
@@ -79,6 +80,7 @@ public class GameManager : MonoBehaviour
         gun3 = new GunType("Wide Load", "Gun 3", 2, BasicBullet, 20, 0.08f, false, 0);
         gun4 = new GunType("The Wiggler", "Gun 4", 3, BasicBullet, 20, 0.08f, false, 0);
         gun5 = new GunType("Spread Em", "Gun 5", 4, BasicBullet, 20, 0.08f, false, 0);
+        gun6 = new GunType("Spread Em Hard", "Gun 6", 4, BasicBullet, 20, 0.04f, true, 30);
     }
 
     private void Awake()
@@ -116,6 +118,7 @@ public class GameManager : MonoBehaviour
         GunDictionary.Add(3, gun3);
         GunDictionary.Add(4, gun4);
         GunDictionary.Add(5, gun5);
+        GunDictionary.Add(6, gun6);
         Debug.Log("GunsLoaded");
     }
 
@@ -233,6 +236,13 @@ public class GameManager : MonoBehaviour
         {
             GameOver();
         }
+    }
+
+    public void AddArmor(int _intArmorValue)
+    {
+        intPCArmor = intPCArmor + _intArmorValue;
+        if (intPCArmor > intPCMaxArmor) intPCArmor = intPCMaxArmor;
+        imgPCArmor.rectTransform.sizeDelta = new Vector2(intPCArmor, 22);
     }
 
     public void LeftGunAmmo(int _intAmmo, bool _boolOverHeat)
