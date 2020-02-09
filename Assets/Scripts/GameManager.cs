@@ -151,8 +151,10 @@ public class GameManager : MonoBehaviour
 
         if (intNoRooms == intLevelSize)
         {
-            intCurrentZone++;
-            SceneManager.LoadScene(0);
+            goNewRoom = goBossRoom;
+            boolBossSpawned = true;
+            //intCurrentZone++;
+            //SceneManager.LoadScene(0);
         }
 
         else
