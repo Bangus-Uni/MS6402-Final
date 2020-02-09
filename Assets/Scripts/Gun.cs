@@ -70,7 +70,15 @@ public class Gun : MonoBehaviour
         }
         if (intGunType == 4)
         {
+            ThreeProngShot();
+        }
+        if (intGunType == 5)
+        {
             FiveProngShot();
+        }
+        if (intGunType == 6)
+        {
+            GrenadeShot();
         }
     }
 
@@ -229,11 +237,40 @@ public class Gun : MonoBehaviour
             flShotCounter = 0;
         }
     }
+    void GrenadeShot()
+    {
+        if (boolIsFiring && !boolOverHeat)
+        {
+            boolHeatGen = true;
+            flShotCounter -= Time.deltaTime;
+            if (flShotCounter <= 0)
+            {
+                Quaternion GrenadeThrowPoint = Quaternion.Euler(-45, 0, 0);
+
+                flShotCounter = flTimeBetweenShots;
+                Bullet NewGrenade = Instantiate(bullet, trFirePoint.position, trFirePoint.rotation * GrenadeThrowPoint) as Bullet;
+                NewGrenade.flSpeed = flBulletSpeed;
+                NewGrenade.gameObject.GetComponent<Rigidbody>().AddForce(trFirePoint.forward * flBulletSpeed, ForceMode.VelocityChange);
+                NewGrenade.gameObject.GetComponent<Rigidbody>().AddForce(trFirePoint.up * (flBulletSpeed * 1.5f), ForceMode.VelocityChange);
+            }
+        }
+
+        else
+        {
+            flShotCounter = 0;
+        }
+    }
 
     void HeatGun()
     {
         intHeat++;
-        if (intHeat == intMaxHeat) boolOverHeat = true;
+        if (intHeat >= intMaxHeat) boolOverHeat = true;
+    }
+
+    void HeatGunGrenade()
+    {
+        intHeat += 50;
+        if (intHeat >= intMaxHeat) boolOverHeat = true;
     }
 
     void Cooldown()
