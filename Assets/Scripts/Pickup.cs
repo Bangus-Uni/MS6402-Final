@@ -13,7 +13,7 @@ public class Pickup : MonoBehaviour
         GM = FindObjectOfType<GameManager>();
         intPickupGunRand = Mathf.RoundToInt(Random.Range(1.5f, GM.GunDictionary.Count + 0.5f));
         Debug.Log("Length Of Dictionary: " + GM.GunDictionary.Count);
-        GunPickup = GM.GunDictionary[8];
+        GunPickup = GM.GunDictionary[intPickupGunRand];
         Debug.Log("Got Gun: " + GunPickup.strGTGunName);
     }
 
