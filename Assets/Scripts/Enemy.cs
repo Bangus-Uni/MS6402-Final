@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy: MonoBehaviour
+public class Enemy : MonoBehaviour
 {
 
     public int intHealth;
     public int intMaxHealth;
     public float flMoveSpeed = 5;
-    private Rigidbody rbEnemy;
+    public Rigidbody rbEnemy;
 
     public GameObject goPC;
 
@@ -18,24 +18,17 @@ public class Enemy: MonoBehaviour
 
     public Gun[] EnemyGun;
 
-    void Start() {
+    void Start()
+    {
         rbEnemy = GetComponent<Rigidbody>();
         goPC = GameObject.FindGameObjectWithTag("PC");
         intHealth = intMaxHealth;
     }
 
-    void Update() {
-
-       transform.LookAt(new Vector3(goPC.transform.position.x, transform.position.y, goPC.transform.position.z));
-        for (int i = 0; i < EnemyGun.Length; i++)
-        {
-            EnemyGun[i].boolIsFiring = true;
-        }
-        
-    }
-
-    private void FixedUpdate() {
-        transform.position = Vector3.MoveTowards(transform.position, goPC.transform.position, flMoveSpeed * Time.deltaTime);
+    public void TakeDamage(int _intDamage)
+    {
+        intHealth = intHealth - _intDamage;
+        if (intHealth <= 0) Destroy(gameObject);
     }
 
     void OnCollisionEnter(Collision collision)

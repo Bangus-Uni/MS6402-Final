@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9d6ea47ada1884e89db4dafe11bf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GM: {fileID: 0}
   boolPCGun: 0
   boolIsFiring: 0
   intLeftOrRight: 0
@@ -308,6 +309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9d6ea47ada1884e89db4dafe11bf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GM: {fileID: 0}
   boolPCGun: 0
   boolIsFiring: 0
   intLeftOrRight: 0
@@ -412,6 +414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9d6ea47ada1884e89db4dafe11bf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GM: {fileID: 0}
   boolPCGun: 0
   boolIsFiring: 0
   intLeftOrRight: 0
@@ -628,6 +631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9d6ea47ada1884e89db4dafe11bf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GM: {fileID: 0}
   boolPCGun: 0
   boolIsFiring: 0
   intLeftOrRight: 0
@@ -874,6 +878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9d6ea47ada1884e89db4dafe11bf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GM: {fileID: 0}
   boolPCGun: 0
   boolIsFiring: 0
   intLeftOrRight: 0
@@ -1116,6 +1121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9d6ea47ada1884e89db4dafe11bf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GM: {fileID: 0}
   boolPCGun: 0
   boolIsFiring: 0
   intLeftOrRight: 0
@@ -1442,6 +1448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9d6ea47ada1884e89db4dafe11bf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GM: {fileID: 0}
   boolPCGun: 0
   boolIsFiring: 0
   intLeftOrRight: 0
@@ -1546,6 +1553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9d6ea47ada1884e89db4dafe11bf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GM: {fileID: 0}
   boolPCGun: 0
   boolIsFiring: 0
   intLeftOrRight: 0
@@ -1650,6 +1658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9d6ea47ada1884e89db4dafe11bf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GM: {fileID: 0}
   boolPCGun: 0
   boolIsFiring: 0
   intLeftOrRight: 0
@@ -1883,6 +1892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9d6ea47ada1884e89db4dafe11bf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GM: {fileID: 0}
   boolPCGun: 0
   boolIsFiring: 0
   intLeftOrRight: 0
@@ -2047,6 +2057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9d6ea47ada1884e89db4dafe11bf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GM: {fileID: 0}
   boolPCGun: 0
   boolIsFiring: 0
   intLeftOrRight: 0
@@ -2181,6 +2192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9d6ea47ada1884e89db4dafe11bf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GM: {fileID: 0}
   boolPCGun: 0
   boolIsFiring: 0
   intLeftOrRight: 0
@@ -2352,12 +2364,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4857695184825469817}
-  - component: {fileID: 7509710119777552217}
   - component: {fileID: 8275499831263987551}
   - component: {fileID: 8326058515412060383}
+  - component: {fileID: 6388228424155608230}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2390,36 +2402,6 @@ Transform:
   m_Father: {fileID: 6804534385603783515}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7509710119777552217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9212371367668440973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3351f333994709e408ec1a3512103c14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  intHealth: 0
-  intMaxHealth: 100
-  flMoveSpeed: 0.3
-  goPC: {fileID: 0}
-  flRange: 10
-  EnemyGun:
-  - {fileID: 2928772265644967804}
-  - {fileID: 874122414787362652}
-  - {fileID: 1307492495571344869}
-  - {fileID: 8763153767881119841}
-  - {fileID: 5400707586209628784}
-  - {fileID: 5902082127835960520}
-  - {fileID: 4703427730690375566}
-  - {fileID: 955535617380083956}
-  - {fileID: 8034764992040162328}
-  - {fileID: 7864667306872195450}
-  - {fileID: 1582286079591990493}
-  - {fileID: 9070411028821830862}
 --- !u!65 &8275499831263987551
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2449,3 +2431,34 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 4
   m_CollisionDetection: 0
+--- !u!114 &6388228424155608230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9212371367668440973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d805a052fa320c4397068d84dcee2ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intHealth: 100
+  intMaxHealth: 100
+  flMoveSpeed: 1
+  rbEnemy: {fileID: 0}
+  goPC: {fileID: 0}
+  flRange: 10
+  EnemyGun:
+  - {fileID: 2928772265644967804}
+  - {fileID: 874122414787362652}
+  - {fileID: 1307492495571344869}
+  - {fileID: 8763153767881119841}
+  - {fileID: 5400707586209628784}
+  - {fileID: 5902082127835960520}
+  - {fileID: 4703427730690375566}
+  - {fileID: 955535617380083956}
+  - {fileID: 8034764992040162328}
+  - {fileID: 7864667306872195450}
+  - {fileID: 1582286079591990493}
+  - {fileID: 9070411028821830862}

@@ -44,11 +44,15 @@ public class GameManager : MonoBehaviour
     // List Of Bullets to pick from
     #region AddBullets
     public Bullet _BasicBullet;
+    public Bullet _Grenade;
+    public Bullet _HomingMissile;
     #endregion
 
     // List Of Bullets to pick from
     #region Bullets
     static Bullet BasicBullet;
+    static Bullet Grenade;
+    static Bullet HomingMissile;
     #endregion
 
     [Header("Popup")]
@@ -69,6 +73,8 @@ public class GameManager : MonoBehaviour
     GunType gun4;
     GunType gun5;
     GunType gun6;
+    GunType gun7;
+    GunType gun8;
 
     GunType guntemp = null;
     #endregion
@@ -80,7 +86,9 @@ public class GameManager : MonoBehaviour
         gun3 = new GunType("Wide Load", "Gun 3", 2, BasicBullet, 20, 0.08f, false, 0);
         gun4 = new GunType("The Wiggler", "Gun 4", 3, BasicBullet, 20, 0.08f, false, 0);
         gun5 = new GunType("Spread Em", "Gun 5", 4, BasicBullet, 20, 0.08f, false, 0);
-        gun6 = new GunType("Spread Em Hard", "Gun 6", 4, BasicBullet, 20, 0.04f, true, 30);
+        gun6 = new GunType("Spread Em Hard", "Gun 6", 5, BasicBullet, 20, 0.04f, true, 30);
+        gun7 = new GunType("Bomboclaat", "Gun 7", 6, Grenade, 6, 3f, true, 10);
+        gun8 = new GunType("Ass Grabber", "Gun 8", 1, HomingMissile, 15, 2f, true, 20);
     }
 
     private void Awake()
@@ -110,6 +118,8 @@ public class GameManager : MonoBehaviour
     public void LoadBullets()
     {
         BasicBullet = _BasicBullet;
+        Grenade = _Grenade;
+        HomingMissile = _HomingMissile;
     }
 
     public void AddGuns() {
@@ -119,6 +129,8 @@ public class GameManager : MonoBehaviour
         GunDictionary.Add(4, gun4);
         GunDictionary.Add(5, gun5);
         GunDictionary.Add(6, gun6);
+        GunDictionary.Add(7, gun7);
+        GunDictionary.Add(8, gun8);
         Debug.Log("GunsLoaded");
     }
 
