@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -37,7 +38,6 @@ public class GameManager : MonoBehaviour
     public Text txtLeftGunName;
     public Text txtRightGunName;
     public Text txtCurrentLevel;
-    public Text txtCurrentZone;
 
 
     [Header("Bullets")]
@@ -107,12 +107,13 @@ public class GameManager : MonoBehaviour
         SetRightGun(gun1);
         intPCHealth = intPCMaxHealth;
         intPCArmor = intPCMaxArmor;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        txtCurrentLevel.text = intCurrentLevel + " - " + intCurrentZone;
     }
 
     public void LoadBullets()
@@ -145,13 +146,13 @@ public class GameManager : MonoBehaviour
         float _intDir1 = 0;
         float _intDir2 = 0;
         Vector3 v3NewRoomPos;
-        GameObject goNewRoom;
+        GameObject goNewRoom = null;
         bool boolBossSpawned = false;
 
         if (intNoRooms == intLevelSize)
         {
-            goNewRoom = goBossRoom;
-            boolBossSpawned = true;
+            intCurrentZone++;
+            SceneManager.LoadScene(0);
         }
 
         else
