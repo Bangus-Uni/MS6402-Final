@@ -36,7 +36,7 @@ public class HomingMissile : Bullet
     {
         if (goTarget != null)
         {
-            transform.LookAt(new Vector3(goTarget.transform.position.x, goTarget.transform.position.y + 1, goTarget.transform.position.z));
+            transform.LookAt(new Vector3(goTarget.transform.position.x, goTarget.transform.position.y, goTarget.transform.position.z));
         }
 
         transform.Translate(Vector3.forward * flSpeed * Time.deltaTime);

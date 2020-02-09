@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
         gun5 = new GunType("Spread Em", "Gun 5", 4, BasicBullet, 20, 0.08f, false, 0);
         gun6 = new GunType("Spread Em Hard", "Gun 6", 5, BasicBullet, 20, 0.04f, true, 30);
         gun7 = new GunType("Bomboclaat", "Gun 7", 6, Grenade, 6, 3f, true, 10);
-        gun8 = new GunType("Ass Grabber", "Gun 8", 1, HomingMissile, 15, 2f, true, 20);
+        gun8 = new GunType("Ass Grabber", "Gun 8", 1, HomingMissile, 25, 2f, true, 20);
     }
 
     private void Awake()

@@ -1606,9 +1606,11 @@ MonoBehaviour:
   txtRightGunAmmo: {fileID: 1846362480}
   txtLeftGunName: {fileID: 627779379}
   txtRightGunName: {fileID: 783976619}
-  txtCurrentLevel: {fileID: 0}
-  txtCurrentZone: {fileID: 0}
+  txtCurrentLevel: {fileID: 771104372}
   _BasicBullet: {fileID: 2959296160918329401, guid: 8de3594141182b641af8dddef16fa16c,
+    type: 3}
+  _Grenade: {fileID: 701456546928536075, guid: 1288a48b070b52f4fa321bf9f1b2a063, type: 3}
+  _HomingMissile: {fileID: 2993577774173819236, guid: aa3258f008bfffe4fb6a48f9a6177e63,
     type: 3}
   boolPopupActive: 0
   goPopup: {fileID: 687095988}
@@ -2695,36 +2697,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648591211}
   m_CullTransparentMesh: 0
---- !u!1 &1691701306
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1691701307}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1691701307
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1691701306}
-  m_LocalRotation: {x: -0.22653048, y: -0, z: -0, w: 0.9740041}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: -26.186, y: 0, z: 0}
 --- !u!1 &1728738044
 GameObject:
   m_ObjectHideFlags: 0
