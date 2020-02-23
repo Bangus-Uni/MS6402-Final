@@ -393,7 +393,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 105021694}
   m_LocalRotation: {x: -0, y: 0.50717014, z: -0, w: 0.86184597}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: -10.53, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1066130275}
@@ -1581,6 +1581,10 @@ MonoBehaviour:
   intPCMaxHealth: 100
   intPCArmor: 100
   intPCMaxArmor: 100
+  intPCSpeed: 7
+  intDefaultMaxHealth: 200
+  intDefaultMaxArmor: 200
+  intDefaultSpeed: 7
   intTotalCorruption: 0
   intLACorruption: 0
   intLLCorruption: 0
@@ -1588,16 +1592,24 @@ MonoBehaviour:
   intRLCorruption: 0
   intCorruptionThreshold: 50
   intMaxCorrupted: 100
+  intSpeedBoosts: 0
+  intArmorBoosts: 0
+  intHealthBoosts: 0
   boolCorrupted: 0
   a_goRooms:
   - {fileID: 6804534385603783512, guid: 9a0bbb34886e52b409b579efb9af35c7, type: 3}
   - {fileID: 6804534385603783512, guid: 1b9bf7728dd48f9439aca970aa23a34c, type: 3}
   - {fileID: 6804534385603783512, guid: 6cc5c6f3c6463744393131cbadd9bb20, type: 3}
   - {fileID: 6804534385603783512, guid: 24fc06541d4cdf34bbdf0f1e561161dd, type: 3}
+  - {fileID: 6804534385603783512, guid: 9a0bbb34886e52b409b579efb9af35c7, type: 3}
+  - {fileID: 6804534385603783512, guid: 1b9bf7728dd48f9439aca970aa23a34c, type: 3}
+  - {fileID: 6804534385603783512, guid: 6cc5c6f3c6463744393131cbadd9bb20, type: 3}
+  - {fileID: 6804534385603783512, guid: 24fc06541d4cdf34bbdf0f1e561161dd, type: 3}
+  - {fileID: 6804534385603783512, guid: b0896ca8d0dc1414093ebdf4eecbd46a, type: 3}
   goBossRoom: {fileID: 6804534385603783512, guid: 812ba5ebc84ff4f41a021569b19a10d3,
     type: 3}
   intNoRooms: 0
-  intLevelSize: 4
+  intLevelSize: 50
   intCurrentLevel: 1
   intCurrentZone: 1
   imgPCHealth: {fileID: 992317071}

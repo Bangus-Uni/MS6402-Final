@@ -12,6 +12,13 @@ public class GameManager : MonoBehaviour
     public int intPCArmor = 100;
     public int intPCMaxArmor = 100;
 
+    public int intPCSpeed = 7;
+
+    public int intDefaultMaxHealth = 200;
+    public int intDefaultMaxArmor = 100;
+    public int intDefaultSpeed = 7;
+
+
     public int intTotalCorruption = 0;
     public int intLACorruption = 0;
     public int intLLCorruption = 0;
@@ -19,6 +26,10 @@ public class GameManager : MonoBehaviour
     public int intRLCorruption = 0;
     public int intCorruptionThreshold = 50;
     public int intMaxCorrupted = 100;
+
+    public int intSpeedBoosts = 0;
+    public int intArmorBoosts = 0;
+    public int intHealthBoosts = 0;
 
     public bool boolCorrupted = false;
 
@@ -222,6 +233,10 @@ public class GameManager : MonoBehaviour
         {
             intLACorruption = GunPickup.intGTCorruption;
             intTotalCorruption = intLACorruption + intLLCorruption + intRACorruption + intRLCorruption;
+            if (intTotalCorruption > intCorruptionThreshold)
+            {
+                TooCorrupted();
+            }
         }   
     }
 
@@ -232,7 +247,45 @@ public class GameManager : MonoBehaviour
         {
             intRACorruption = GunPickup.intGTCorruption;
             intTotalCorruption = intLACorruption + intLLCorruption + intRACorruption + intRLCorruption;
+            if (intTotalCorruption > intCorruptionThreshold)
+            {
+                TooCorrupted();
+            }
         }
+    }
+
+    public void HealthBoost()
+    {
+        intHealthBoosts++;
+        intPCMaxHealth = intPCMaxHealth + (intHealthBoosts * (intPCMaxHealth / 5));
+        intPCHealth = intPCMaxHealth;
+    }
+
+    public void ArmorBoost()
+    {
+        intArmorBoosts++;
+        intPCMaxArmor = intPCMaxArmor + (intArmorBoosts * (intPCMaxArmor/5));
+        intPCArmor = intPCMaxArmor;
+    }
+
+    public void SpeedBoost ()
+    {
+        intSpeedBoosts++;
+        intPCSpeed = intPCSpeed + intSpeedBoosts;
+    }
+
+    public void TooCorrupted()
+    {
+        intHealthBoosts = 0;
+        intArmorBoosts = 0;
+        intSpeedBoosts = 0;
+
+        intPCSpeed = intDefaultSpeed;
+        intPCMaxHealth = intDefaultMaxHealth;
+        intPCMaxArmor = intDefaultMaxArmor;
+
+        if (intPCHealth > intPCMaxHealth) intPCHealth = intPCMaxHealth;
+        if (intPCArmor > intPCMaxArmor) intPCArmor = intPCMaxArmor;
     }
 
     public void PCHit()

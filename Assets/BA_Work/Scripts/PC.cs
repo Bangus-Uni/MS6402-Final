@@ -21,6 +21,7 @@ public class PC : MonoBehaviour
     }
 
     void Update() {
+        flMoveSpeed = GM.intPCSpeed;
         v3MoveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
         v3MoveVelocity = v3MoveInput * flMoveSpeed;
 

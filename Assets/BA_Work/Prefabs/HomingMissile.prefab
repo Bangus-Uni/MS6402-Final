@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 7567596094891539804}
   - component: {fileID: 2993577774173819236}
   - component: {fileID: 3548471804622506502}
-  - component: {fileID: 1151810658567432512}
+  - component: {fileID: 1594356981968967545}
   m_Layer: 0
   m_Name: HomingMissile
   m_TagString: Untagged
@@ -106,7 +106,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4604786259885193964}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.877}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.72809, y: 0.72809, z: 0.72809}
   m_Children:
   - {fileID: 4738593062081711525}
@@ -243,8 +243,8 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!135 &1151810658567432512
-SphereCollider:
+--- !u!65 &1594356981968967545
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -254,8 +254,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.23
-  m_Center: {x: 0, y: 0.1, z: 0.41}
+  m_Size: {x: 0.4, y: 0.4, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5084734174859896065
 GameObject:
   m_ObjectHideFlags: 0
