@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4738593062081711525}
   - component: {fileID: 2545180710361912382}
   - component: {fileID: 6139498806886195524}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 2993577774173819236}
   - component: {fileID: 3548471804622506502}
   - component: {fileID: 1594356981968967545}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HomingMissile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 932420910102486040}
   - component: {fileID: 7334821048670375284}
   - component: {fileID: 5875445074827951839}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 8078035081778582941}
   - component: {fileID: 5614442476348617861}
   - component: {fileID: 2428007993282830193}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
