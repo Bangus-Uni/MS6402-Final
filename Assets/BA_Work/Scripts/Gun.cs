@@ -249,6 +249,7 @@ public class Gun : MonoBehaviour
 
                 flShotCounter = flTimeBetweenShots;
                 Bullet NewGrenade = Instantiate(bullet, trFirePoint.position, trFirePoint.rotation * GrenadeThrowPoint) as Bullet;
+                intHeat += 51;
                 NewGrenade.flSpeed = flBulletSpeed;
                 NewGrenade.gameObject.GetComponent<Rigidbody>().AddForce(trFirePoint.forward * flBulletSpeed, ForceMode.VelocityChange);
                 NewGrenade.gameObject.GetComponent<Rigidbody>().AddForce(trFirePoint.up * (flBulletSpeed * 1.5f), ForceMode.VelocityChange);
