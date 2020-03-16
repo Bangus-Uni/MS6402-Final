@@ -75,7 +75,14 @@ public class GameManager : MonoBehaviour
     public Text txtPopupEffect;
     #endregion
 
+    #region Rooms
+    Room StartRoom;
+    Room CurrentRoom;
+    Room PrevRoom;
+    #endregion
+
     public Dictionary<int, GunType> GunDictionary = new Dictionary<int, GunType>();
+    public Dictionary<string, Room> RoomGrid = new Dictionary<string, Room>();
     // Guns To Import
     #region Guns
     GunType gun1;
@@ -119,6 +126,14 @@ public class GameManager : MonoBehaviour
         intPCHealth = intPCMaxHealth;
         intPCArmor = intPCMaxArmor;
 
+        StartRoom = new Room(0, 0, 0, 0, 0, false, false);
+        string _strRoomKey = StartRoom.intRLeftCoord.ToString()
+                           + StartRoom.intRUpCoord.ToString()
+                           + StartRoom.intRRightCoord.ToString()
+                           + StartRoom.intRDownCoord.ToString();
+        Debug.Log(_strRoomKey);
+        RoomGrid.Add(_strRoomKey, StartRoom);
+        CurrentRoom = StartRoom;
     }
 
     // Update is called once per frame
@@ -152,10 +167,65 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
     }
 
+    public void CreateRoom(GameObject goCreatingRoom, int intDirection)
+    {
+        PrevRoom = CurrentRoom;
+        Room _NewRoom = null;
+        switch (intDirection)
+        {
+            case 1:
+                _NewRoom = new Room(PrevRoom.intRLeftCoord,
+                                    PrevRoom.intRUpCoord + 1,
+                                    PrevRoom.intRRightCoord,
+                                    PrevRoom.intRDownCoord,
+                                    0,
+                                    false,
+                                    false);
+                break;
+            case 2:
+                _NewRoom = new Room(PrevRoom.intRLeftCoord,
+                                    PrevRoom.intRUpCoord,
+                                    PrevRoom.intRRightCoord + 1,
+                                    PrevRoom.intRDownCoord,
+                                    0,
+                                    false,
+                                    false);
+                break;
+            case 3:
+                _NewRoom = new Room(PrevRoom.intRLeftCoord + 1,
+                                    PrevRoom.intRUpCoord,
+                                    PrevRoom.intRRightCoord,
+                                    PrevRoom.intRDownCoord,
+                                    0,
+                                    false,
+                                    false);
+                break;
+            case 4:
+                _NewRoom = new Room(PrevRoom.intRLeftCoord,
+                                    PrevRoom.intRUpCoord,
+                                    PrevRoom.intRRightCoord,
+                                    PrevRoom.intRDownCoord + 1,
+                                    0,
+                                    false,
+                                    false);
+                break;
+            default:
+                break;
+        }
+        string _strRoomKey = _NewRoom.intRLeftCoord.ToString()
+                           + _NewRoom.intRUpCoord.ToString()
+                           + _NewRoom.intRRightCoord.ToString()
+                           + _NewRoom.intRDownCoord.ToString();
+        Debug.Log(_strRoomKey);
+        RoomGrid.Add(_strRoomKey, _NewRoom);
+        CurrentRoom = _NewRoom;
+    }
+
     public void GenerateRoom(bool _boolPosNeg1, bool _boolPosNeg2, Transform _trRoom)
     {
         float _intDir1 = 0;
         float _intDir2 = 0;
+        int _intDirection = 0;
         Vector3 v3NewRoomPos;
         GameObject goNewRoom = null;
         bool boolBossSpawned = false;
@@ -174,6 +244,28 @@ public class GameManager : MonoBehaviour
             goNewRoom = a_goRooms[intDice - 1];
             intNoRooms++;
         }
+
+        if (_boolPosNeg1 && _boolPosNeg2)
+        {
+            _intDirection = 1;
+        }
+
+        else if (_boolPosNeg1 && !_boolPosNeg2)
+        {
+            _intDirection = 2;
+        }
+
+        else if (!_boolPosNeg1 && _boolPosNeg2)
+        {
+            _intDirection = 3;
+        }
+
+        else if (!_boolPosNeg1 && !_boolPosNeg2)
+        {
+            _intDirection = 4;
+        }
+
+        CreateRoom(goNewRoom, _intDirection);
 
         //////////////////////////////
 
