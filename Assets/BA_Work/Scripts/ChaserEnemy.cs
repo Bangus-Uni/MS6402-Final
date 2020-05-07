@@ -17,6 +17,15 @@ public class ChaserEnemy : Enemy
 
     private void FixedUpdate()
     {
-        transform.position = Vector3.MoveTowards(transform.position, goPC.transform.position, flMoveSpeed * Time.deltaTime);
+        if (Vector3.Distance(transform.position, goPC.transform.position) >= flRange)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, goPC.transform.position, flMoveSpeed * Time.deltaTime);
+        }
+
+        else
+        {
+            transform.position = Vector3.MoveTowards(transform.position, goPC.transform.position, -1 * flMoveSpeed * Time.deltaTime);
+        }
+        
     }
 }
