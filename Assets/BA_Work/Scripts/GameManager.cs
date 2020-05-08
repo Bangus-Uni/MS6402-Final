@@ -275,7 +275,7 @@ public class GameManager : MonoBehaviour
             _intDir2 = 14.1f;
             v3NewRoomPos = new Vector3(_trRoom.position.x + _intDir1, _trRoom.position.y, _trRoom.position.z + _intDir2);
             GameObject _goNewRoom = Instantiate(goNewRoom, v3NewRoomPos, _trRoom.rotation);
-            _goNewRoom.transform.GetChild(4).gameObject.SetActive(false);
+            //_goNewRoom.transform.GetChild(4).gameObject.SetActive(false);
         }
 
         else if (_boolPosNeg1 && !_boolPosNeg2)
@@ -284,7 +284,7 @@ public class GameManager : MonoBehaviour
             _intDir2 = -14.1f;
             v3NewRoomPos = new Vector3(_trRoom.position.x + _intDir1, _trRoom.position.y, _trRoom.position.z + _intDir2);
             GameObject _goNewRoom = Instantiate(goNewRoom, v3NewRoomPos, _trRoom.rotation);
-            _goNewRoom.transform.GetChild(3).gameObject.SetActive(false);
+           // _goNewRoom.transform.GetChild(3).gameObject.SetActive(false);
         }
 
         else if (!_boolPosNeg1 && _boolPosNeg2)
@@ -293,7 +293,7 @@ public class GameManager : MonoBehaviour
             _intDir2 = 14.1f;
             v3NewRoomPos = new Vector3(_trRoom.position.x + _intDir1, _trRoom.position.y, _trRoom.position.z + _intDir2);
             GameObject _goNewRoom = Instantiate(goNewRoom, v3NewRoomPos, _trRoom.rotation);
-            _goNewRoom.transform.GetChild(2).gameObject.SetActive(false);
+           // _goNewRoom.transform.GetChild(2).gameObject.SetActive(false);
         }
 
         else if (!_boolPosNeg1 && !_boolPosNeg2)
@@ -302,7 +302,7 @@ public class GameManager : MonoBehaviour
             _intDir2 = -14.1f;
             v3NewRoomPos = new Vector3(_trRoom.position.x + _intDir1, _trRoom.position.y, _trRoom.position.z + _intDir2);
             GameObject _goNewRoom = Instantiate(goNewRoom, v3NewRoomPos, _trRoom.rotation);
-            _goNewRoom.transform.GetChild(1).gameObject.SetActive(false);
+            //_goNewRoom.transform.GetChild(1).gameObject.SetActive(false);
         }
 
         ////////////////////////////

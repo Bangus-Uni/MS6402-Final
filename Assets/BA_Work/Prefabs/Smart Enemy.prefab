@@ -125,7 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   intHealth: 20
   intMaxHealth: 20
-  flMoveSpeed: 4
+  flMoveSpeed: 5
   rbEnemy: {fileID: 0}
   goPC: {fileID: 0}
   flRange: 5
@@ -211,7 +211,7 @@ MonoBehaviour:
   intLeftOrRight: 0
   bullet: {fileID: 2959296160918329401, guid: 5d266d5f842a9994ab6ce7d4389f1cf6, type: 3}
   flBulletSpeed: 10
-  flTimeBetweenShots: 1.2
+  flTimeBetweenShots: 0.8
   trFirePoint: {fileID: 3832555901242261421}
   intHeat: 0
   intMaxHeat: 100

@@ -44,7 +44,7 @@ public class Door : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-       if (RC.boolActivated == true)
+       if (other.gameObject.tag == "PC" && RC.boolRoomCompleted == true)
         {
             boolPicked = true;
             if (!boolOpened && other.tag == "PC") GM.GenerateRoom(boolPosNeg1, boolPosNeg2, goRoom.transform);
@@ -56,7 +56,9 @@ public class Door : MonoBehaviour
     {
         if (other.gameObject.tag == "PC" && RC.boolActivated == false)
         {
+            Debug.Log("LockingRoom");
             RC.RoomOpening();
+            gameObject.SetActive(false);
         }
     }
 }

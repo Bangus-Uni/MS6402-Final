@@ -98,6 +98,7 @@ MonoBehaviour:
   boolPosNeg2: 0
   boolUseable: 1
   boolOpened: 0
+  boolPicked: 0
   goRoom: {fileID: 0}
 --- !u!65 &4120116183926007013
 BoxCollider:
@@ -210,6 +211,7 @@ MonoBehaviour:
   boolPosNeg2: 1
   boolUseable: 1
   boolOpened: 0
+  boolPicked: 0
   goRoom: {fileID: 0}
 --- !u!65 &2492494100883281426
 BoxCollider:
@@ -322,6 +324,7 @@ MonoBehaviour:
   boolPosNeg2: 0
   boolUseable: 1
   boolOpened: 0
+  boolPicked: 0
   goRoom: {fileID: 0}
 --- !u!65 &8588277270304657139
 BoxCollider:
@@ -434,6 +437,7 @@ MonoBehaviour:
   boolPosNeg2: 1
   boolUseable: 1
   boolOpened: 0
+  boolPicked: 0
   goRoom: {fileID: 0}
 --- !u!65 &7777168162211720319
 BoxCollider:
@@ -457,6 +461,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6804534385603783515}
+  - component: {fileID: 5780327217649297089}
   m_Layer: 0
   m_Name: MORRoom8
   m_TagString: Untagged
@@ -485,6 +490,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5780327217649297089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6804534385603783512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4801d576f8af2bc4493d7813e3d31024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolFirstRoom: 0
+  boolActivated: 0
+  boolRoomOpened: 0
+  boolRoomOpenedComp: 0
+  boolRoomCompleted: 0
+  a_goDoors: []
+  a_goEnemies: []
 --- !u!1001 &264947710879535990
 PrefabInstance:
   m_ObjectHideFlags: 0
