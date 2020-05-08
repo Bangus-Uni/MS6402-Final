@@ -50,6 +50,10 @@ public class GameManager : MonoBehaviour
     public Text txtRightGunName;
     public Text txtCurrentLevel;
 
+    [Header("Canvas")]
+    public Canvas canStartScreen;
+    public Canvas canMainUI;
+
 
     [Header("Bullets")]
     // List Of Bullets to pick from
@@ -134,6 +138,9 @@ public class GameManager : MonoBehaviour
         Debug.Log(_strRoomKey);
         RoomGrid.Add(_strRoomKey, StartRoom);
         CurrentRoom = StartRoom;
+
+        canMainUI.gameObject.SetActive(false);
+        canStartScreen.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -284,7 +291,7 @@ public class GameManager : MonoBehaviour
             _intDir2 = -14.1f;
             v3NewRoomPos = new Vector3(_trRoom.position.x + _intDir1, _trRoom.position.y, _trRoom.position.z + _intDir2);
             GameObject _goNewRoom = Instantiate(goNewRoom, v3NewRoomPos, _trRoom.rotation);
-           // _goNewRoom.transform.GetChild(3).gameObject.SetActive(false);
+            // _goNewRoom.transform.GetChild(3).gameObject.SetActive(false);
         }
 
         else if (!_boolPosNeg1 && _boolPosNeg2)
@@ -293,7 +300,7 @@ public class GameManager : MonoBehaviour
             _intDir2 = 14.1f;
             v3NewRoomPos = new Vector3(_trRoom.position.x + _intDir1, _trRoom.position.y, _trRoom.position.z + _intDir2);
             GameObject _goNewRoom = Instantiate(goNewRoom, v3NewRoomPos, _trRoom.rotation);
-           // _goNewRoom.transform.GetChild(2).gameObject.SetActive(false);
+            // _goNewRoom.transform.GetChild(2).gameObject.SetActive(false);
         }
 
         else if (!_boolPosNeg1 && !_boolPosNeg2)
@@ -306,17 +313,7 @@ public class GameManager : MonoBehaviour
         }
 
         ////////////////////////////
-        
-        if (boolBossSpawned)
-        {
-           Door[] a_AllDoors = FindObjectsOfType<Door>();
 
-            for (int i = 0; i < a_AllDoors.Length; i++)
-            {
-                a_AllDoors[i].gameObject.SetActive(false);
-            }
-
-        }
     }
 
     public void SetLeftGun(GunType GunPickup) {
@@ -329,7 +326,7 @@ public class GameManager : MonoBehaviour
             {
                 TooCorrupted();
             }
-        }   
+        }
     }
 
     public void SetRightGun(GunType GunPickup)
@@ -356,11 +353,11 @@ public class GameManager : MonoBehaviour
     public void ArmorBoost()
     {
         intArmorBoosts++;
-        intPCMaxArmor = intPCMaxArmor + (intArmorBoosts * (intPCMaxArmor/5));
+        intPCMaxArmor = intPCMaxArmor + (intArmorBoosts * (intPCMaxArmor / 5));
         intPCArmor = intPCMaxArmor;
     }
 
-    public void SpeedBoost ()
+    public void SpeedBoost()
     {
         intSpeedBoosts++;
         intPCSpeed = intPCSpeed + intSpeedBoosts;
@@ -434,4 +431,10 @@ public class GameManager : MonoBehaviour
             boolPopupActive = false;
         }
     }
+
+    public void StartButtonClick() {
+        canMainUI.gameObject.SetActive(true);
+        Destroy(canStartScreen);
+    }
+
 }

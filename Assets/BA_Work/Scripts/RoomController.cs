@@ -5,6 +5,7 @@ using UnityEngine;
 public class RoomController : MonoBehaviour
 {
     public bool boolFirstRoom;
+    public bool boolLastRoom;
 
     public bool boolActivated = false;
 
@@ -25,10 +26,17 @@ public class RoomController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        a_goEnemies = GetComponentsInChildren<Enemy>();
-        if (a_goEnemies.Length == 0 && !boolRoomCompleted)
+        if (boolFirstRoom)
         {
             RoomCompleted();
+        }
+
+        else {
+            a_goEnemies = GetComponentsInChildren<Enemy>();
+            if (a_goEnemies.Length == 0 && !boolRoomCompleted && !boolLastRoom)
+            {
+                RoomCompleted();
+            }
         }
     }
 

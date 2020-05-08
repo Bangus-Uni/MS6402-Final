@@ -21,6 +21,8 @@ public class Door : MonoBehaviour
 
     RoomController RC;
 
+    GameObject goParticles;
+
 
     void Start()
     {
@@ -28,6 +30,7 @@ public class Door : MonoBehaviour
         goRoom = gameObject.transform.parent.gameObject;
         bcDoor = GetComponent<BoxCollider>();
         RC = GetComponentInParent<RoomController>();
+        goParticles = transform.GetChild(0).gameObject;
     }
 
     private void Update()
@@ -35,10 +38,12 @@ public class Door : MonoBehaviour
         if (boolUseable == false)
         {
             bcDoor.isTrigger = false;
+            goParticles.SetActive(true);
         }
         else
         {
             bcDoor.isTrigger = true;
+            goParticles.SetActive(false);
         }
     }
 

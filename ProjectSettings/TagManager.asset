@@ -7,6 +7,7 @@ TagManager:
   - PC
   - Enemy
   - EnemyBullet
+  - Particle
   layers:
   - Default
   - TransparentFX
