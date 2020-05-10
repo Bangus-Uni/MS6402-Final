@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &6184851137692158547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912740257595371712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3351f333994709e408ec1a3512103c14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intHealth: 0
+  intMaxHealth: 0
+  flMoveSpeed: 0
+  rbEnemy: {fileID: 0}
+  goPC: {fileID: 0}
+  flRange: 0
+  EnemyGun: []
 --- !u!1 &1371909849069805703
 GameObject:
   m_ObjectHideFlags: 0
@@ -19254,7 +19273,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4801d576f8af2bc4493d7813e3d31024, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boolFirstRoom: 1
+  boolFirstRoom: 0
+  boolLastRoom: 0
   boolActivated: 0
   boolRoomOpened: 0
   boolRoomOpenedComp: 0
@@ -19469,6 +19489,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0df3ad10a1975e845ae66cd9e46e9026, type: 3}
+--- !u!1 &912740257595371712 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5469244412139459465, guid: 0df3ad10a1975e845ae66cd9e46e9026,
+    type: 3}
+  m_PrefabInstance: {fileID: 5137512874833830729}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &912740257595371772 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5469244412139459509, guid: 0df3ad10a1975e845ae66cd9e46e9026,
