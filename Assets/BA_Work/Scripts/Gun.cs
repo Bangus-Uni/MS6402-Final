@@ -80,6 +80,10 @@ public class Gun : MonoBehaviour
         {
             GrenadeShot();
         }
+        if (intGunType == 7)
+        {
+            BuckShot();
+        }
     }
 
     void BasicShot()
@@ -253,6 +257,65 @@ public class Gun : MonoBehaviour
                 NewGrenade.flSpeed = flBulletSpeed;
                 NewGrenade.gameObject.GetComponent<Rigidbody>().AddForce(trFirePoint.forward * flBulletSpeed, ForceMode.VelocityChange);
                 NewGrenade.gameObject.GetComponent<Rigidbody>().AddForce(trFirePoint.up * (flBulletSpeed * 1.5f), ForceMode.VelocityChange);
+            }
+        }
+
+        else
+        {
+            flShotCounter = 0;
+        }
+    }
+
+    void BuckShot()
+    {
+        Vector3 v3FirePointLoc1 = new Vector3(trFirePoint.position.x - 0.5f, trFirePoint.position.y, trFirePoint.position.z);
+        Vector3 v3FirePointLoc2 = new Vector3(trFirePoint.position.x, trFirePoint.position.y, trFirePoint.position.z);
+        Vector3 v3FirePointLoc3 = new Vector3(trFirePoint.position.x + 0.5f, trFirePoint.position.y, trFirePoint.position.z);
+        Vector3 v3FirePointLoc4 = new Vector3(trFirePoint.position.x - 0.5f, trFirePoint.position.y - 0.5f, trFirePoint.position.z);
+        Vector3 v3FirePointLoc5 = new Vector3(trFirePoint.position.x, trFirePoint.position.y - 0.5f, trFirePoint.position.z);
+        Vector3 v3FirePointLoc6 = new Vector3(trFirePoint.position.x + 0.5f, trFirePoint.position.y - 0.5f, trFirePoint.position.z);
+        Vector3 v3FirePointLoc7 = new Vector3(trFirePoint.position.x - 0.5f, trFirePoint.position.y + 0.5f, trFirePoint.position.z);
+        Vector3 v3FirePointLoc8 = new Vector3(trFirePoint.position.x, trFirePoint.position.y + 0.5f, trFirePoint.position.z);
+        Vector3 v3FirePointLoc9 = new Vector3(trFirePoint.position.x + 0.5f, trFirePoint.position.y + 0.5f, trFirePoint.position.z);
+
+
+
+        if (boolIsFiring && !boolOverHeat)
+        {
+            boolHeatGen = true;
+            flShotCounter -= Time.deltaTime;
+            if (flShotCounter <= 0)
+            {
+                flShotCounter = flTimeBetweenShots;
+                Bullet newBullet1 = Instantiate(bullet, v3FirePointLoc1, trFirePoint.rotation) as Bullet;
+                Bullet newBullet2 = Instantiate(bullet, v3FirePointLoc2, trFirePoint.rotation) as Bullet;
+                Bullet newBullet3 = Instantiate(bullet, v3FirePointLoc3, trFirePoint.rotation) as Bullet;
+                Bullet newBullet4 = Instantiate(bullet, v3FirePointLoc4, trFirePoint.rotation) as Bullet;
+                Bullet newBullet5 = Instantiate(bullet, v3FirePointLoc5, trFirePoint.rotation) as Bullet;
+                Bullet newBullet6 = Instantiate(bullet, v3FirePointLoc6, trFirePoint.rotation) as Bullet;
+                Bullet newBullet7 = Instantiate(bullet, v3FirePointLoc7, trFirePoint.rotation) as Bullet;
+                Bullet newBullet8 = Instantiate(bullet, v3FirePointLoc8, trFirePoint.rotation) as Bullet;
+                Bullet newBullet9 = Instantiate(bullet, v3FirePointLoc9, trFirePoint.rotation) as Bullet;
+
+                newBullet1.flSpeed = flBulletSpeed;
+                newBullet2.flSpeed = flBulletSpeed;
+                newBullet3.flSpeed = flBulletSpeed;
+                newBullet4.flSpeed = flBulletSpeed;
+                newBullet5.flSpeed = flBulletSpeed;
+                newBullet6.flSpeed = flBulletSpeed;
+                newBullet7.flSpeed = flBulletSpeed;
+                newBullet8.flSpeed = flBulletSpeed;
+                newBullet9.flSpeed = flBulletSpeed;
+
+                newBullet1.flDestroyTime = 0.2f;
+                newBullet2.flDestroyTime = 0.2f;
+                newBullet3.flDestroyTime = 0.2f;
+                newBullet4.flDestroyTime = 0.2f;
+                newBullet5.flDestroyTime = 0.2f;
+                newBullet6.flDestroyTime = 0.2f;
+                newBullet7.flDestroyTime = 0.2f;
+                newBullet8.flDestroyTime = 0.2f;
+                newBullet9.flDestroyTime = 0.2f;
             }
         }
 

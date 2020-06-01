@@ -7,6 +7,10 @@ public class Bullet : MonoBehaviour
     public float flSpeed = 8.5f;
     public float flDestroyTime = 5f;
 
+    public bool boolFireBullet;
+    public bool boolIceBullet;
+    public bool boolShockBullet;
+
     // Start is called before the first frame update
     void Start()
     {

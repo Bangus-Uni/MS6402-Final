@@ -23,6 +23,8 @@ public class Door : MonoBehaviour
 
     GameObject goParticles;
 
+    public bool BoolBigRoomDoor;
+
 
     void Start()
     {
