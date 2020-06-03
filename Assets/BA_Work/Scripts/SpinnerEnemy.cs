@@ -28,11 +28,6 @@ public class SpinnerEnemy : Enemy
             flMoveSpeed = 0;
         }
 
-        if (boolShockedAct)
-        {
-            EnemyGun[i].boolIsFiring = false;
-        }
-
         gameObject.transform.Rotate(0f, 30f, 0.0f, Space.Self);
         for (int i = 0; i < EnemyGun.Length; i++)
         {
