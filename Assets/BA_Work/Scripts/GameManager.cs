@@ -395,6 +395,28 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void PCGrenHit()
+    {
+        if (intPCArmor > 50)
+        {
+            intPCArmor = intPCArmor - 50;
+            imgPCArmor.rectTransform.sizeDelta = new Vector2(intPCArmor, 22);
+        }
+
+        else
+        {
+            int intDamRemainder = 50 - intPCArmor;
+            intPCArmor = 0;
+            intPCHealth = intPCHealth - intDamRemainder;
+            imgPCHealth.rectTransform.sizeDelta = new Vector2(intPCHealth * 2, 22);
+        }
+
+        if (intPCHealth <= 0)
+        {
+            GameOver();
+        }
+    }
+
     public void AddArmor(int _intArmorValue)
     {
         intPCArmor = intPCArmor + _intArmorValue;

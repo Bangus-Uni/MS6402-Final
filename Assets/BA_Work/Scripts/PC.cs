@@ -58,6 +58,11 @@ public class PC : MonoBehaviour
         rbPC.velocity = v3MoveVelocity;
     }
 
+    public void GrenadeHit()
+    {
+        GM.PCGrenHit();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.GetComponent<Bullet>())
