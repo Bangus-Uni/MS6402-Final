@@ -61,6 +61,9 @@ public class GameManager : MonoBehaviour
     public Bullet _BasicBullet;
     public Bullet _Grenade;
     public Bullet _HomingMissile;
+    public Bullet _FlamingBullet;
+    public Bullet _IceBullet;
+    public Bullet _ShockBullet;
     #endregion
 
     // List Of Bullets to pick from
@@ -68,6 +71,9 @@ public class GameManager : MonoBehaviour
     static Bullet BasicBullet;
     static Bullet Grenade;
     static Bullet HomingMissile;
+    static Bullet FlamingBullet;
+    static Bullet IceBullet;
+    static Bullet ShockBullet;
     #endregion
 
     [Header("Popup")]
@@ -97,6 +103,16 @@ public class GameManager : MonoBehaviour
     GunType gun6;
     GunType gun7;
     GunType gun8;
+    GunType gun9;
+    GunType gun10;
+    GunType gun11;
+    GunType gun12;
+    GunType gun13;
+    GunType gun14;
+    GunType gun15;
+    GunType gun16;
+    GunType gun17;
+    GunType gun18;
 
     GunType guntemp = null;
     #endregion
@@ -111,6 +127,17 @@ public class GameManager : MonoBehaviour
         gun6 = new GunType("Spread Em Hard", "Gun 6", 5, BasicBullet, 20, 0.04f, true, 30);
         gun7 = new GunType("Bomboclaat", "Gun 7", 6, Grenade, 6, 3f, true, 10);
         gun8 = new GunType("Ass Grabber", "Gun 8", 1, HomingMissile, 25, 2f, true, 20);
+        gun9 = new GunType("The Puncher", "Gun 9", 7, BasicBullet, 20, 0.04f, true, 0);
+        gun10 = new GunType("Flaming PeaShooter", "Gun 10", 1, FlamingBullet, 20, 0.08f, false, 0);
+        gun11 = new GunType("Frozen PeaShooter", "Gun 11", 1, IceBullet, 20, 0.08f, false, 0);
+        gun12 = new GunType("Shocking PeaShooter", "Gun 12", 1, ShockBullet, 20, 0.08f, false, 0);
+        gun13 = new GunType("Fire Punch", "Gun 13", 7, FlamingBullet, 20, 0.04f, true, 0);
+        gun14 = new GunType("Shock Whipper", "Gun 14", 3, ShockBullet, 20, 0.08f, false, 0);
+        gun15 = new GunType("Ice Wave", "Gun 15", 2, IceBullet, 20, 0.08f, false, 0);
+        gun16 = new GunType("Flaming Spread", "Gun 16", 4, FlamingBullet, 20, 0.08f, false, 0);
+        gun17 = new GunType("Lightning Bolt", "Gun 17", 1, ShockBullet, 20, 0.04f, false, 0);
+        gun18 = new GunType("Chilly Blow", "Gun 9", 7, IceBullet, 20, 0.04f, true, 0);
+
     }
 
     private void Awake()
@@ -154,6 +181,9 @@ public class GameManager : MonoBehaviour
         BasicBullet = _BasicBullet;
         Grenade = _Grenade;
         HomingMissile = _HomingMissile;
+        FlamingBullet = _FlamingBullet;
+        IceBullet = _IceBullet;
+        ShockBullet = _ShockBullet;
     }
 
     public void AddGuns() {
@@ -165,6 +195,16 @@ public class GameManager : MonoBehaviour
         GunDictionary.Add(6, gun6);
         GunDictionary.Add(7, gun7);
         GunDictionary.Add(8, gun8);
+        GunDictionary.Add(9, gun9);
+        GunDictionary.Add(10, gun10);
+        GunDictionary.Add(11, gun11);
+        GunDictionary.Add(12, gun12);
+        GunDictionary.Add(13, gun13);
+        GunDictionary.Add(14, gun14);
+        GunDictionary.Add(15, gun15);
+        GunDictionary.Add(16, gun16);
+        GunDictionary.Add(17, gun17);
+        GunDictionary.Add(18, gun18);
         Debug.Log("GunsLoaded");
     }
 
