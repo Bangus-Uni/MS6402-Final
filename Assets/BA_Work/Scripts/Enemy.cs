@@ -39,30 +39,6 @@ public class Enemy : MonoBehaviour
         intHealth = intMaxHealth;
     }
 
-    public void IceCooldown()
-    {
-        flIceTime += Time.deltaTime;
-        if (flIceTime >= flCooldownTime)
-        {
-            boolFrozen = false;
-            boolFrozenAct = false;
-            boolFrozenPerma = true;
-            flIceTime = 0;
-        }
-    }
-
-    public void ShockCooldown()
-    {
-        flShockTime += Time.deltaTime;
-        if (flShockTime >= flCooldownTime)
-        {
-            boolShocked = false;
-            boolShockedAct = false;
-            boolShockedPerma = true;
-            flIceTime = 0;
-        }
-    }
-
     public void TakeDamage(int _intDamage)
     {
         intHealth = intHealth - _intDamage;
@@ -84,10 +60,23 @@ public class Enemy : MonoBehaviour
             else if (collision.gameObject.GetComponent<Bullet>().boolIceBullet == true && !boolFrozenPerma)
             {
                 boolFrozen = true;
+
+                if (!boolFrozenAct)
+                {
+                    Invoke("TurnOffFrozen", 8);
+                }
+                boolFrozenAct = true;
             }
-            else if (collision.gameObject.GetComponent<Bullet>().boolFireBullet == true && !boolShockedPerma)
+            else if (collision.gameObject.GetComponent<Bullet>().boolShockBullet == true && !boolShockedPerma)
             {
                 boolShocked = true;
+
+                if (!boolShockedAct)
+                {
+                    Invoke("TurnOffShock", 5);
+                }
+
+                boolShockedAct = true;
             }
 
 
@@ -95,6 +84,16 @@ public class Enemy : MonoBehaviour
 
             if (intHealth <= 0) Destroy(gameObject);
         }
+    }
+
+    public void TurnOffFrozen() {
+        boolFrozen = false;
+        boolFrozenPerma = true;
+    }
+
+     public void TurnOffShock() {
+        boolShocked = false;
+        boolShockedPerma = true;
     }
 
 }

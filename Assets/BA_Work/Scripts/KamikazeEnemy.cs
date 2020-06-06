@@ -6,17 +6,18 @@ public class KamikazeEnemy : Enemy
 {
     void Update()
     {
-        transform.LookAt(new Vector3(goPC.transform.position.x, transform.position.y, goPC.transform.position.z));
+        if (!boolFrozen) transform.LookAt(new Vector3(goPC.transform.position.x, transform.position.y, goPC.transform.position.z));
     }
 
     private void FixedUpdate()
     {
         if (Vector3.Distance(transform.position, goPC.transform.position) >= flRange)
         {
-            transform.position = Vector3.MoveTowards(transform.position, goPC.transform.position, flMoveSpeed * Time.deltaTime);
+            if (!boolFrozen) transform.position = Vector3.MoveTowards(transform.position, goPC.transform.position, flMoveSpeed * Time.deltaTime);
         }
 
         else {
+
             Collider[] Blast = Physics.OverlapSphere(transform.position, 3);
 
             foreach (Collider AffectedObject in Blast)
@@ -28,6 +29,7 @@ public class KamikazeEnemy : Enemy
                     AffectedPC.GrenadeHit();
                 }
             }
+
             Destroy(gameObject);
         }
 
