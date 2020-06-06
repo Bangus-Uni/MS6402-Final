@@ -4,8 +4,31 @@ using UnityEngine;
 
 public class KamikazeEnemy : Enemy
 {
+
+    public GameObject goIcePS;
+    public GameObject goShockPS;
     void Update()
     {
+        if (boolFrozen)
+        {
+            goIcePS.SetActive(true);
+        }
+
+        else
+        {
+            goIcePS.SetActive(false);
+        }
+
+        if (boolShocked)
+        {
+            goShockPS.SetActive(true);
+        }
+
+        else
+        {
+            goShockPS.SetActive(false);
+        }
+
         if (!boolFrozen) transform.LookAt(new Vector3(goPC.transform.position.x, transform.position.y, goPC.transform.position.z));
     }
 
