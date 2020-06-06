@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
     [Header("Canvas")]
     public Canvas canStartScreen;
     public Canvas canMainUI;
+    public Canvas canLore;
 
 
     [Header("Bullets")]
@@ -167,6 +168,7 @@ public class GameManager : MonoBehaviour
         CurrentRoom = StartRoom;
 
         canMainUI.gameObject.SetActive(false);
+        canLore.gameObject.SetActive(false);
         canStartScreen.gameObject.SetActive(true);
     }
 
@@ -497,6 +499,16 @@ public class GameManager : MonoBehaviour
     public void StartButtonClick() {
         canMainUI.gameObject.SetActive(true);
         Destroy(canStartScreen);
+    }
+
+    public void LoreButtonClick()
+    {
+        canLore.gameObject.SetActive(true);
+    }
+
+    public void BackButtonClick()
+    {
+        canLore.gameObject.SetActive(false);
     }
 
 }
