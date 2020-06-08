@@ -175,6 +175,16 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.Tab) && Input.GetKey(KeyCode.P))
+        {
+            GameOver();
+        }
+
+        if (Input.GetKey(KeyCode.Tab) && Input.GetKey(KeyCode.O))
+        {
+            SceneManager.LoadScene(1);
+        }
+
         txtCurrentLevel.text = intCurrentLevel + " - " + intCurrentZone;
     }
 

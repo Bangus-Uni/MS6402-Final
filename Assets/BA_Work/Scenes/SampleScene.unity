@@ -825,11 +825,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5184519446830488284, guid: 855ce6a5fa411b949860b63fb291b5f8,
-        type: 3}
-      propertyPath: m_Name
-      value: ArmorPickup
-      objectReference: {fileID: 0}
     - target: {fileID: 5184519446830488280, guid: 855ce6a5fa411b949860b63fb291b5f8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -884,6 +879,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5184519446830488284, guid: 855ce6a5fa411b949860b63fb291b5f8,
+        type: 3}
+      propertyPath: m_Name
+      value: ArmorPickup
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 855ce6a5fa411b949860b63fb291b5f8, type: 3}
@@ -2228,6 +2228,13 @@ MonoBehaviour:
   - {fileID: 6804534385603783512, guid: 545517d74c8644f43a9b2dda97d1bb53, type: 3}
   - {fileID: 6804534385603783512, guid: 49c214a14033c7c4c9630b61d95fb367, type: 3}
   - {fileID: 6804534385603783512, guid: 9a551f58439ed0f46b66854886613ac7, type: 3}
+  - {fileID: 6804534385603783512, guid: 7ddaa5ad519783e4b9e7109f366abbbe, type: 3}
+  - {fileID: 6804534385603783512, guid: 96144bc70fabbaa4095247db3712d5e6, type: 3}
+  - {fileID: 6804534385603783512, guid: dc149cee0cdc6cf40bab547cf5519880, type: 3}
+  - {fileID: 6804534385603783512, guid: 6277914a5e06cfd43a165aa2dbf304f4, type: 3}
+  - {fileID: 6804534385603783512, guid: ec6c5d2883f224d459ae7cd83259377e, type: 3}
+  - {fileID: 6804534385603783512, guid: d7f9848ab62e967419748821b8626199, type: 3}
+  - {fileID: 6804534385603783512, guid: 0f4501dd1d130044a93243aecff94afb, type: 3}
   - {fileID: 6804534385603783512, guid: b0896ca8d0dc1414093ebdf4eecbd46a, type: 3}
   goBossRoom: {fileID: 6804534385603783512, guid: 4ea0c978d0fdfda4aa0783a1056db32d,
     type: 3}
@@ -3986,11 +3993,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2503647002419158141, guid: 0079ea653a28c404297042ecf854f427,
-        type: 3}
-      propertyPath: m_Name
-      value: Pickup
-      objectReference: {fileID: 0}
     - target: {fileID: 2503647002419158137, guid: 0079ea653a28c404297042ecf854f427,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4045,6 +4047,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2503647002419158141, guid: 0079ea653a28c404297042ecf854f427,
+        type: 3}
+      propertyPath: m_Name
+      value: Pickup
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2503647002419158139, guid: 0079ea653a28c404297042ecf854f427, type: 3}

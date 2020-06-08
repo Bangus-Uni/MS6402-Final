@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class Restart : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public void RestartGame ()
+
+    private void Update()
     {
-        System.Diagnostics.Process.Start(Application.dataPath.Replace("_Data", ".exe")); //new program
-        Application.Quit(); //kill current process
+        if (Input.GetKey(KeyCode.Space))
+        {
+            Debug.Log("Restarting");
+            System.Diagnostics.Process.Start(Application.dataPath.Replace("_Data", ".exe")); //new program
+            Application.Quit(); //kill current process
+        }
     }
 }
