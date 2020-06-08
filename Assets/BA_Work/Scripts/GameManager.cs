@@ -120,24 +120,24 @@ public class GameManager : MonoBehaviour
     void CreateGuns()
     {
 
-        gun1 = new GunType("The PeaShooter", "Gun 1", 1, BasicBullet, 20, 0.08f, false, 0);
-        gun2 = new GunType("The Better Peashooter", "Gun 2", 1, BasicBullet, 20, 0.04f, false, 0);
-        gun3 = new GunType("Wide Load", "Gun 3", 2, BasicBullet, 20, 0.08f, false, 0);
-        gun4 = new GunType("The Wiggler", "Gun 4", 3, BasicBullet, 20, 0.08f, false, 0);
-        gun5 = new GunType("Spread Em", "Gun 5", 4, BasicBullet, 20, 0.08f, false, 0);
-        gun6 = new GunType("Spread Em Hard", "Gun 6", 5, BasicBullet, 20, 0.04f, true, 30);
-        gun7 = new GunType("Bomboclaat", "Gun 7", 6, Grenade, 6, 3f, true, 10);
-        gun8 = new GunType("Ass Grabber", "Gun 8", 1, HomingMissile, 25, 2f, true, 20);
-        gun9 = new GunType("The Puncher", "Gun 9", 7, BasicBullet, 20, 0.04f, true, 0);
-        gun10 = new GunType("Flaming PeaShooter", "Gun 10", 1, FlamingBullet, 20, 0.08f, false, 0);
-        gun11 = new GunType("Frozen PeaShooter", "Gun 11", 1, IceBullet, 20, 0.08f, false, 0);
-        gun12 = new GunType("Shocking PeaShooter", "Gun 12", 1, ShockBullet, 20, 0.08f, false, 0);
-        gun13 = new GunType("Fire Punch", "Gun 13", 7, FlamingBullet, 20, 0.04f, true, 0);
-        gun14 = new GunType("Shock Whipper", "Gun 14", 3, ShockBullet, 20, 0.08f, false, 0);
-        gun15 = new GunType("Ice Wave", "Gun 15", 2, IceBullet, 20, 0.08f, false, 0);
-        gun16 = new GunType("Flaming Spread", "Gun 16", 4, FlamingBullet, 20, 0.08f, false, 0);
-        gun17 = new GunType("Lightning Bolt", "Gun 17", 1, ShockBullet, 20, 0.04f, false, 0);
-        gun18 = new GunType("Chilly Blow", "Gun 9", 7, IceBullet, 20, 0.04f, true, 0);
+        gun1 = new GunType("The PeaShooter", "Basic Gun", 1, BasicBullet, 20, 0.08f, false, 0);
+        gun2 = new GunType("The Better Peashooter", "Better Basic Gun", 1, BasicBullet, 20, 0.04f, false, 0);
+        gun3 = new GunType("Wide Load", "A Wide Spreaded Gun", 2, BasicBullet, 20, 0.08f, false, 0);
+        gun4 = new GunType("The Wiggler", "Rapid Firing Beam", 3, BasicBullet, 20, 0.08f, false, 0);
+        gun5 = new GunType("Spread Em", "3 Streams of Bullets", 4, BasicBullet, 20, 0.08f, false, 0);
+        gun6 = new GunType("Spread Em Hard", "CORRUPTED - 5 Streams of Bullets", 5, BasicBullet, 20, 0.04f, true, 30);
+        gun7 = new GunType("Bomboclaat", "Grenade Launcher", 6, Grenade, 6, 3f, true, 10);
+        gun8 = new GunType("Ass Grabber", "Homing Missile", 1, HomingMissile, 25, 2f, true, 20);
+        gun9 = new GunType("The Puncher", "CORRUPTED - Short Range Cluster Shot", 7, BasicBullet, 20, 0.04f, true, 0);
+        gun10 = new GunType("Flaming PeaShooter", "Fire Effect - Basic Gun", 1, FlamingBullet, 20, 0.08f, false, 0);
+        gun11 = new GunType("Frozen PeaShooter", "Ice Effect - Basic Gun", 1, IceBullet, 20, 0.08f, false, 0);
+        gun12 = new GunType("Shocking PeaShooter", "Shock Effect - Basic Gun", 1, ShockBullet, 20, 0.08f, false, 0);
+        gun13 = new GunType("Fire Punch", "CORRUPTED - Fire Effect - Short Range Cluster Shot", 7, FlamingBullet, 20, 0.04f, true, 0);
+        gun14 = new GunType("Shock Whipper", "CORRUPTED - Shock Effect - Rapid Firing Beam", 3, ShockBullet, 20, 0.08f, false, 0);
+        gun15 = new GunType("Ice Wave", "Ice Effect - A Wide Spreaded Gun", 2, IceBullet, 20, 0.08f, false, 0);
+        gun16 = new GunType("Flaming Spread", "CORRUPTED - Fire Effect - 3 Streams of Bullets", 4, FlamingBullet, 20, 0.08f, true, 0);
+        gun17 = new GunType("Lightning Bolt", "CORRUPTED - Shock Effect - Better Basic Gun", 1, ShockBullet, 20, 0.04f, true, 0);
+        gun18 = new GunType("Chilly Blow", "CORRUPTED - Ice Effect - Short Range Cluster Shot", 7, IceBullet, 20, 0.04f, true, 0);
 
     }
 
@@ -212,8 +212,7 @@ public class GameManager : MonoBehaviour
 
     void GameOver()
     {
-        //txtPCHealth.text = "Dead - Restart";
-        Time.timeScale = 0;
+        SceneManager.LoadScene(2);
     }
 
     public void CreateRoom(GameObject goCreatingRoom, int intDirection)
@@ -362,11 +361,10 @@ public class GameManager : MonoBehaviour
         txtLeftGunName.text = GunPickup.strGTGunName;
         if (GunPickup.boolGTCorrupted)
         {
-            intLACorruption = GunPickup.intGTCorruption;
-            intTotalCorruption = intLACorruption + intLLCorruption + intRACorruption + intRLCorruption;
-            if (intTotalCorruption > intCorruptionThreshold)
+            intPCHealth = intPCHealth - 20;
+            if (intPCHealth <= 0)
             {
-                TooCorrupted();
+                GameOver();
             }
         }
     }
@@ -376,11 +374,10 @@ public class GameManager : MonoBehaviour
         txtRightGunName.text = GunPickup.strGTGunName;
         if (GunPickup.boolGTCorrupted)
         {
-            intRACorruption = GunPickup.intGTCorruption;
-            intTotalCorruption = intLACorruption + intLLCorruption + intRACorruption + intRLCorruption;
-            if (intTotalCorruption > intCorruptionThreshold)
+            intPCHealth = intPCHealth - 20;
+            if (intPCHealth <= 0)
             {
-                TooCorrupted();
+                GameOver();
             }
         }
     }

@@ -25,6 +25,7 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         Debug.Log("BulletHit");
         Destroy(gameObject);
     }
