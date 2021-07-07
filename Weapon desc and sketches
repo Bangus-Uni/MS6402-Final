@@ -1,0 +1,85 @@
+Weapon stats: First 3 are kinda self explanatory imo. I would rate them on a scale of 1-5, meaning 1 is horrible, 5 is the best. 
+Weapon Size: Small: Takes up one arm slot /Large: takes up two arm slots.
+(F)ire Rate 
+(D)amage
+(A)ccuracy
+(C)orruption: 
+-	In the case of normal weapons, there wouldn`t be. Unless we want to have massive randomizations, which could be included in later stages of game development.
+-	Unique weapons, either junk or overpowered ones would have some debuffs aka a downside. The aim of this mechanic is to allow the player if they want to get the weapon, knowing what they`d have to put up with as a side effect.
+-	Side effects could include:
+o	Movement speed debuff
+o	Long recharge/reload time
+o	Take more damage from enemies
+o	Takes up an extra slot
+o	Rotate/turn slower
+o	Reduce a stat of the other weapon
+o	Super fast fire rate, but low damage/poor accuracy
+o	More enemies spawn
+o	Can only be replaced by another corrupted weapon.
+-	I can only guess how much of a pain most of this could be to code, these are just first thoughts, I will look into more roguelikes as time allows and adjust/update these ideas.
+ 
+
+Base weapons: Type-01 Series
+
+Type-01 Pistol “Peashooter”
+-	Small Weapon
+-	Easy to get, simple to use, and is considered non lethal…unless you shoot someone in the head a dozen times, then it could work. It`s all I could afford, and it`s all I have to work with, for now.
+o	(F)ire Rate ++
+o	(D)amage +
+o	(A)ccuracy +++
+o	(C)orruption: „As if this thing could be any more worthless.”
+
+
+Type-01 SMG “Rain of Peas”
+-	Small Weapon
+-	A faster version of the other gun…if you could call it a real gun.
+o	(F)ire Rate ++++
+o	(D)amage +
+o	(A)ccuracy ++
+o	(C)orruption: „It`s already bad with its inability to fire straightforward.”
+
+Type-01 Shotgun "Pack of Peas"
+-	Small weapon
+-	Shoots lotsa tiny bullets. Packs a little punch if fired point blank. Take a step back however and not many are gonna hit.
+o	(F)ire Rate +
+o	(D)amage ++
+o	(A)ccuracy ++
+o	(C)orruption: „Horrible short range, but it is a shotgun after all”
+ 
+Military-Grade weapons:
+AL-47+1 Assault Laser Rifle
+-	Large weapon
+-	Standard issue military rifle. Hope I won`t ever get shot by these things.
+o	(F)ire Rate +++
+o	(D)amage +++
+o	(A)ccuracy +++
+o	(C)orruption: n/a
+
+LAW Plasma Launcher
+-	Large Weapon
+-	Now THIS thing right here, Saw it in action once. Melted three cars like they were nothing. I kinda want to try it out.
+o	(F)ire Rate +
+o	(D)amage +++++
+o	(A)ccuracy +++
+o	(C)orruption: „N/A, But can damage user if they are too close to blast radius.”
+
+
+
+“Discontinued” weapons, aka corrupted weapons:
+
+Tri-beam laser gun
+-	Large weapon
+-	Shoots three lasers in three lines. Discontinued as it uses up too much battery and caused moderate corruption .
+o	(F)ire Rate +++
+o	(D)amage ++
+o	(A)ccuracy ++++
+o	(C)orruption: „Greatly reduced movement speed while firing to compensate for battery usage.”
+
+Spray and Pray(for yourself):
+-	Small weapon
+-	It shoots non-stop, seriously. Meant to be used for crowd control, ended up blowing the user`s arm off.
+o	(F)ire Rate +++++
+o	(D)amage ++
+o	(A)ccuracy +
+o	(C)orruption: „Firing for too long can harm user.”
+
